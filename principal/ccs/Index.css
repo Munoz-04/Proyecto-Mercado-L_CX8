@@ -1,0 +1,57 @@
+body {
+    background: #ffe600;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+}
+
+.logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 350px;
+}
+
+.logo img {
+    width: 800px;
+    margin-bottom: 20px;
+    margin-right: -70px;
+}
+
+.paises {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+}
+
+.pais-btn {
+    display: flex;
+    background: #fff159;
+    border: none;
+    border-radius: 8px;
+    padding: 5px 10px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.2s;
+    text-align: left;
+}
+
+.pais-btn:hover {
+    background: #ffe600;
+}
+
+.pais-btn img {
+    width: 28px;
+    height: 18px;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+}
