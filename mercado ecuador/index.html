@@ -1,0 +1,995 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mercado Ecuador - La plataforma líder de compra y venta en Ecuador con productos nuevos y usados">
+    <title>Mercado Ecuador - Compra y vende productos en todo el país</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #3483fa;
+            --secondary-color: #00a650;
+            --accent-color: #ffe600;
+            --dark-color: #222;
+            --light-color: #f5f5f5;
+            --text-color: #333;
+            --gray-light: #e6e6e6;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body { 
+            font-family: 'Arial', sans-serif; 
+            margin: 0; 
+            background: var(--light-color); 
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header Styles */
+        .top-nav {
+            background: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 10px 40px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .top-nav .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .top-nav .logo img {
+            height: 40px;
+        }
+        
+        .top-nav .logo span {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: var(--primary-color);
+        }
+        
+        .top-nav .links {
+            display: flex;
+            gap: 25px;
+        }
+        
+        .top-nav .links a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .top-nav .links a:hover {
+            color: var(--primary-color);
+        }
+        
+        .user-actions {
+            display: flex;
+            gap: 15px;
+        }
+        
+        .user-actions a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        .user-actions a:hover {
+            color: var(--primary-color);
+        }
+        
+        .cart-icon {
+            position: relative;
+        }
+        
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            width: 18px;
+            height: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.7em;
+        }
+        
+        /* Main Header */
+        .main-header { 
+            background: var(--accent-color); 
+            padding: 20px 0; 
+            text-align: center;
+            position: relative;
+        }
+        
+        .main-header h1 { 
+            margin: 0; 
+            color: var(--text-color); 
+            font-size: 2.2em;
+        }
+        
+        .main-header p {
+            margin-top: 10px;
+            font-size: 1.1em;
+        }
+        
+        /* Search Bar */
+        .search-container {
+            background: #fff; 
+            padding: 15px 0; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 60px;
+            z-index: 999;
+        }
+        
+        .search-bar {
+            display: flex;
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        .search-bar input[type="text"] { 
+            flex: 1;
+            padding: 12px 15px;
+            border: 1px solid var(--gray-light);
+            border-radius: 4px 0 0 4px;
+            font-size: 1em;
+            outline: none;
+        }
+        
+        .search-bar input[type="text"]:focus {
+            border-color: var(--primary-color);
+        }
+        
+        .search-bar button { 
+            padding: 12px 20px; 
+            background: var(--primary-color); 
+            color: #fff; 
+            border: none; 
+            border-radius: 0 4px 4px 0; 
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        
+        .search-bar button:hover {
+            background: #2968c8;
+        }
+        
+        /* Categories */
+        .categories {
+            background: white;
+            padding: 15px 0;
+            margin: 20px 0;
+            overflow-x: auto;
+            white-space: nowrap;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+        
+        .categories-container {
+            display: flex;
+            gap: 20px;
+            padding: 0 15px;
+        }
+        
+        .category {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            min-width: 80px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        .category:hover {
+            transform: translateY(-3px);
+        }
+        
+        .category-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--light-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 5px;
+        }
+        
+        .category-name {
+            font-size: 0.85em;
+            color: var(--text-color);
+        }
+        
+        /* Banner */
+        .banner {
+            width: 100%;
+            margin: 20px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .banner img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Products Section */
+        .section-title {
+            margin: 30px 0 20px;
+            font-size: 1.5em;
+            color: var(--text-color);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .section-title a {
+            font-size: 0.9em;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+        
+        .products { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .product { 
+            background: #fff; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08); 
+            padding: 16px; 
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+            position: relative;
+        }
+        
+        .product:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .product-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: var(--secondary-color);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+            font-weight: bold;
+        }
+        
+        .product img { 
+            width: 100%; 
+            height: 180px; 
+            object-fit: contain; 
+            border-radius: 6px;
+            margin-bottom: 15px;
+            background: #f9f9f9;
+            padding: 10px;
+        }
+        
+        .product h2 { 
+            font-size: 1.1em; 
+            margin: 10px 0 5px;
+            height: 40px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+        
+        .product .price { 
+            color: var(--primary-color); 
+            font-weight: bold; 
+            margin: 5px 0;
+            font-size: 1.2em;
+        }
+        
+        .product .original-price {
+            text-decoration: line-through;
+            color: #999;
+            font-size: 0.9em;
+            margin-right: 5px;
+        }
+        
+        .product .discount {
+            color: var(--secondary-color);
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .product .shipping {
+            color: var(--secondary-color);
+            font-size: 0.85em;
+            margin: 5px 0;
+        }
+        
+        .product .rating {
+            color: #ffc107;
+            font-size: 0.9em;
+            margin: 5px 0;
+        }
+        
+        .product button { 
+            background: var(--secondary-color); 
+            color: #fff; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 4px; 
+            cursor: pointer;
+            width: 100%;
+            font-weight: bold;
+            transition: background 0.2s;
+            margin-top: 10px;
+        }
+        
+        .product button:hover {
+            background: #008a43;
+        }
+        
+        /* Featured Brands */
+        .brands {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 30px 0;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+        
+        .brand {
+            flex: 1;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .brand img {
+            max-width: 100%;
+            height: 40px;
+            object-fit: contain;
+            filter: grayscale(100%);
+            opacity: 0.7;
+            transition: all 0.3s;
+        }
+        
+        .brand:hover img {
+            filter: grayscale(0);
+            opacity: 1;
+        }
+        
+        /* Footer */
+        footer { 
+            background: var(--dark-color); 
+            color: #fff; 
+            padding: 40px 0 20px;
+            margin-top: 60px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.1em;
+            margin-bottom: 15px;
+            color: #fff;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-column ul li a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.2s;
+            font-size: 0.9em;
+        }
+        
+        .footer-column ul li a:hover {
+            color: #fff;
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid #444;
+            padding-top: 20px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #aaa;
+        }
+        
+        .footer-contacts {
+            margin-top: 15px;
+            padding-bottom: 16px;
+            font-size: 0.98em;
+        }
+        
+        .footer-contacts a {
+            color: var(--accent-color);
+            text-decoration: none;
+            margin: 0 8px;
+        }
+        
+        .footer-contacts a:hover {
+            text-decoration: underline;
+        }
+        
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        
+        .social-icons a {
+            color: #fff;
+            font-size: 1.2em;
+            transition: color 0.2s;
+        }
+        
+        .social-icons a:hover {
+            color: var(--accent-color);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .top-nav {
+                flex-direction: column;
+                padding: 15px;
+            }
+            
+            .top-nav .links {
+                margin-top: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .products {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+            
+            .search-bar {
+                width: 90%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .products {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .product h2 {
+                font-size: 1em;
+                height: 36px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="top-nav">
+        <div class="logo">
+            <img src="./mercado.png" alt="Logo Mercado Ecuador">
+            <span>Mercado Ecuador</span>
+        </div>
+        <div class="links">
+            <a href="#"><i class="fas fa-home"></i> Inicio</a>
+            <a href="#"><i class="fas fa-list"></i> Categorías</a>
+            <a href="#"><i class="fas fa-percentage"></i> Ofertas</a>
+            <a href="#"><i class="fas fa-store"></i> Vender</a>
+            <a href="#"><i class="fas fa-question-circle"></i> Ayuda</a>
+        </div>
+        <div class="user-actions">
+            <a href="#"><i class="fas fa-user"></i> Mi cuenta</a>
+            <a href="#" class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">3</span>
+            </a>
+        </div>
+    </div>
+    
+    <header class="main-header">
+        <div class="container">
+            <h1>Mercado Ecuador</h1>
+            <p>Compra y vende productos nuevos y usados en todo el país</p>
+        </div>
+    </header>
+    
+    <div class="search-container">
+        <div class="container">
+            <form class="search-bar">
+                <input type="text" placeholder="Buscar productos, marcas y más..." id="search-input">
+                <button type="submit"><i class="fas fa-search"></i> Buscar</button>
+            </form>
+        </div>
+    </div>
+    
+    <div class="categories">
+        <div class="container categories-container">
+            <div class="category">
+                <div class="category-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <span class="category-name">Celulares</span>
+            </div>
+            <div class="category">
+                <div class="category-icon">
+                    <i class="fas fa-laptop"></i>
+                </div>
+                <span class="category-name">Computación</span>
+            </div>
+            <div class="category">
+                <div class="category-icon">
+                    <i class="fas fa-tshirt"></i>
+                </div>
+                <span class="category-name">Ropa</span>
+            </div>
+            <div class="category">
+                <div class="category-icon">
+                    <i class="fas fa-home"></i>
+                </div>
+                <span class="category-name">Hogar</span>
+            </div>
+            <div class="category">
+                <div class="category-icon">
+                    <i class="fas fa-gamepad"></i>
+                </div>
+                <span class="category-name">Juegos</span>
+            </div>
+            <div class="category">
+                <div class="category-icon">
+                    <i class="fas fa-utensils"></i>
+                </div>
+                <span class="category-name">Alimentos</span>
+            </div>
+            <div class="category">
+                <div class="category-icon">
+                    <i class="fas fa-car"></i>
+                </div>
+                <span class="category-name">Autos</span>
+            </div>
+            <div class="category">
+                <div class="category-icon">
+                    <i class="fas fa-baby"></i>
+                </div>
+                <span class="category-name">Bebés</span>
+            </div>
+            <div class="category">
+                <div class="category-icon">
+                    <i class="fas fa-futbol"></i>
+                </div>
+                <span class="category-name">Deportes</span>
+            </div>
+            <div class="category">
+                <div class="category-icon">
+                    <i class="fas fa-book"></i>
+                </div>
+                <span class="category-name">Libros</span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="container">
+        <div class="banner">
+            <img src="./oferta.png" alt="Ofertas especiales">
+        </div>
+        
+        <h2 class="section-title">
+            Productos destacados
+            <a href="#">Ver todos <i class="fas fa-chevron-right"></i></a>
+        </h2>
+        
+        <section class="products" id="featured-products">
+            <!-- Productos destacados -->
+            <div class="product">
+                <span class="product-badge">Nuevo</span>
+                <img src="./celular.png" alt="Celular Samsung Galaxy a05">
+                <h2>Celular Samsung Galaxy A05 128GB Negro</h2>
+                <div class="price">$180</div>
+                <div class="shipping">Envío gratis</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(125)</span>
+                </div>
+                <button>Comprar ahora</button>
+            </div>
+            
+            <div class="product">
+                <span class="product-badge">Oferta</span>
+                <img src="./laptop.png" alt="Laptop Lenovo IdeaPad 3">
+                <h2>Laptop Lenovo IdeaPad 3 15.6" 8GB RAM 256GB SSD</h2>
+                <div class="price">
+                    <span class="original-price">$520</span>
+                    $450
+                    <span class="discount">14% OFF</span>
+                </div>
+                <div class="shipping">Envío gratis</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>(89)</span>
+                </div>
+                <button>Comprar ahora</button>
+            </div>
+            
+            <div class="product">
+                <img src="./earpod.png" alt="Auriculares Bluetooth">
+                <h2>Auriculares Bluetooth JBL Tune 510BT Negro</h2>
+                <div class="price">$45</div>
+                <div class="shipping">Envío gratis</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(342)</span>
+                </div>
+                <button>Comprar ahora</button>
+            </div>
+            
+            <div class="product">
+                <span class="product-badge">Más vendido</span>
+                <img src="./LG.png" alt="Smart TV LG">
+                <h2>Smart TV LG 43" 4K UHD HDR WebOS</h2>
+                <div class="price">$320</div>
+                <div class="shipping">Envío gratis</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(217)</span>
+                </div>
+                <button>Comprar ahora</button>
+            </div>
+        </section>
+        
+        <h2 class="section-title">
+            Ofertas del día
+            <a href="#">Ver todas <i class="fas fa-chevron-right"></i></a>
+        </h2>
+        
+        <section class="products" id="daily-offers">
+            <!-- Ofertas del día -->
+            <div class="product">
+                <span class="product-badge">Oferta</span>
+                <img src="./zapatillas.png" alt="Zapatillas deportivas">
+                <h2>Zapatillas Deportivas Nike Revolution 6</h2>
+                <div class="price">
+                    <span class="original-price">$85</span>
+                    $65
+                    <span class="discount">24% OFF</span>
+                </div>
+                <div class="shipping">Envío gratis</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>(156)</span>
+                </div>
+                <button>Comprar ahora</button>
+            </div>
+            
+            <div class="product">
+                <span class="product-badge">Oferta</span>
+                <img src="./cafetera.png" alt="Cafetera">
+                <h2>Cafetera Oster Prima Latte 15 Bares</h2>
+                <div class="price">
+                    <span class="original-price">$120</span>
+                    $95
+                    <span class="discount">21% OFF</span>
+                </div>
+                <div class="shipping">Envío gratis</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(78)</span>
+                </div>
+                <button>Comprar ahora</button>
+            </div>
+            
+            <div class="product">
+                <span class="product-badge">Oferta</span>
+                <img src="./mochila.png" alt="Mochila">
+                <h2>Mochila Escolar Impermeable 30L</h2>
+                <div class="price">
+                    <span class="original-price">$35</span>
+                    $25
+                    <span class="discount">29% OFF</span>
+                </div>
+                <div class="shipping">Envío gratis</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(203)</span>
+                </div>
+                <button>Comprar ahora</button>
+            </div>
+            
+            <div class="product">
+                <span class="product-badge">Oferta</span>
+                <img src="./reloj.png" alt="Smartwatch">
+                <h2>Smartwatch Xiaomi Mi Band 7 Negro</h2>
+                <div class="price">
+                    <span class="original-price">$55</span>
+                    $42
+                    <span class="discount">24% OFF</span>
+                </div>
+                <div class="shipping">Envío gratis</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(312)</span>
+                </div>
+                <button>Comprar ahora</button>
+            </div>
+        </section>
+        
+        <h2 class="section-title">
+            Productos para el hogar
+            <a href="#">Ver todos <i class="fas fa-chevron-right"></i></a>
+        </h2>
+        
+        <section class="products" id="home-products">
+            <!-- Productos para el hogar -->
+            <div class="product">
+                <img src="./licuadora.png" alt="Licuadora">
+                <h2>Licuadora Oster Pro 1200W Vaso Vidrio</h2>
+                <div class="price">$75</div>
+                <div class="shipping">Envío gratis</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>(94)</span>
+                </div>
+                <button>Comprar ahora</button>
+            </div>
+            
+            <div class="product">
+                <img src="./sabanas.png" alt="Juego de sábanas">
+                <h2>Juego de Sábanas Algodón 200 hilos 1.5 plazas</h2>
+                <div class="price">$32</div>
+                <div class="shipping">Envío gratis</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                    <span>(127)</span>
+                </div>
+                <button>Comprar ahora</button>
+            </div>
+            
+            <div class="product">
+                <span class="product-badge">Nuevo</span>
+                <img src="./aspiradora.png" alt="Aspiradora">
+                <h2>Aspiradora Inalámbrica Philips 2000W</h2>
+                <div class="price">$110</div>
+                <div class="shipping">Envío gratis</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <span>(43)</span>
+                </div>
+                <button>Comprar ahora</button>
+            </div>
+            
+            <div class="product">
+                <img src="./ollas.png" alt="Juego de ollas">
+                <h2>Juego de Ollas Acero Inoxidable 6 Piezas</h2>
+                <div class="price">$89</div>
+                <div class="shipping">Envío gratis</div>
+                <div class="rating">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="far fa-star"></i>
+                    <span>(68)</span>
+                </div>
+                <button>Comprar ahora</button>
+            </div>
+        </section>
+        
+        <div class="brands">
+            <div class="brand">
+                <img src="./logo1.png" alt="Samsung">
+            </div>
+            <div class="brand">
+                <img src="./Logo2.png" alt="LG">
+            </div>
+            <div class="brand">
+                <img src="./Sony.png" alt="Sony">
+            </div>
+            <div class="brand">
+                <img src="./Xiaomi.png" alt="Xiaomi">
+            </div>
+            <div class="brand">
+                <img src="./Nike.png" alt="Nike">
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Comprar</h3>
+                    <ul>
+                        <li><a href="#">Cómo comprar</a></li>
+                        <li><a href="#">Formas de pago</a></li>
+                        <li><a href="#">Envíos</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                        <li><a href="#">Garantías</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Vender</h3>
+                    <ul>
+                        <li><a href="#">Cómo vender</a></li>
+                        <li><a href="#">Herramientas para vendedores</a></li>
+                        <li><a href="#">Mercado Shops</a></li>
+                        <li><a href="#">Mercado Envíos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Servicios</h3>
+                    <ul>
+                        <li><a href="#">Mercado Pago</a></li>
+                        <li><a href="#">Mercado Crédito</a></li>
+                        <li><a href="#">Mercado Puntos</a></li>
+                        <li><a href="#">Seguros</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Sobre Mercado Ecuador</h3>
+                    <ul>
+                        <li><a href="#">Quiénes somos</a></li>
+                        <li><a href="#">Trabaja con nosotros</a></li>
+                        <li><a href="#">Sustentabilidad</a></li>
+                        <li><a href="#">Inversores</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Ayuda</h3>
+                    <ul>
+                        <li><a href="#">Centro de ayuda</a></li>
+                        <li><a href="#">Compras seguras</a></li>
+                        <li><a href="#">Términos y condiciones</a></li>
+                        <li><a href="#">Privacidad</a></li>
+                    </ul>
+                    
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                &copy; 2024 Mercado Ecuador. Todos los derechos reservados.
+                <div class="footer-contacts">
+                    Contacto: 
+                    <a href="mailto:info@mercadoecuador.com">info@mercadoecuador.com</a> |
+                    WhatsApp: 
+                    <a href="https://wa.me/593999999999" target="_blank">+593 99 999 9999</a> |
+                    Instagram: 
+                    <a href="https://instagram.com/mercadoecuador" target="_blank">@mercadoecuador</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        // Función de búsqueda básica
+        document.querySelector('.search-bar').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const searchTerm = document.getElementById('search-input').value.toLowerCase();
+            const products = document.querySelectorAll('.product h2');
+            
+            products.forEach(product => {
+                const productTitle = product.textContent.toLowerCase();
+                const productCard = product.closest('.product');
+                
+                if (productTitle.includes(searchTerm)) {
+                    productCard.style.display = 'block';
+                } else {
+                    productCard.style.display = 'none';
+                }
+            });
+            
+            // Mostrar mensaje si no hay resultados
+            const visibleProducts = document.querySelectorAll('.product[style="display: block;"]');
+            if (visibleProducts.length === 0 && searchTerm !== '') {
+                alert('No se encontraron productos con ese nombre.');
+                // Mostrar todos los productos nuevamente
+                document.querySelectorAll('.product').forEach(p => p.style.display = 'block');
+            }
+        });
+        
+        // Simular añadir al carrito
+        document.querySelectorAll
