@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .product-img {
+            width: 100%;
+            max-width: 100%;
+            height: 180px;
+            aspect-ratio: 16/9;
+            object-fit: contain;
+            background: #fafafa;
+            border-radius: 8px;
+            display: block;
+            margin-bottom: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+        }
+        main section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            margin-top: 32px;
+        }
+        article {
+            flex: 1 1 250px;
+            border: 1px solid #eee;
+            border-radius: 12px;
+            padding: 16px;
+            background: #fff;
+            min-width: 240px;
+            max-width: 320px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            transition: transform 0.15s;
+        }
+        article:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+        }
+        .catalog-section {
+            margin-top: 48px;
+        }
+        .catalog-title {
+            font-size: 1.3em;
+            color: #222;
+            margin-bottom: 18px;
+            font-weight: 600;
+        }
+        .flag-rd {
+            position: fixed;
+            bottom: 24px;
+            right: 24px;
+            width: 56px;
+            height: 38px;
+            z-index: 100;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.12);
+            border: 2px solid #fff;
+        }
+        @media (max-width: 1100px) {
+            main section, .catalog-section .catalog-list {
+            gap: 16px;
+            }
+            article {
+            min-width: 180px;
+            max-width: 48vw;
+            }
+        }
+        @media (max-width: 900px) {
+            main section, .catalog-section .catalog-list {
+            flex-direction: column;
+            gap: 16px;
+            }
+            article {
+            max-width: 100%;
+            }
+        }
+        @media (max-width: 600px) {
+            .container, main {
+            max-width: 98vw !important;
+            padding: 0 4px;
+            }
+            nav ul, nav div {
+            flex-direction: column !important;
+            align-items: flex-start !important;
+            }
+            nav ul li, nav div ul li {
+            margin: 4px 0 !important;
+            }
+            .flag-rd {
+            width: 38px;
+            height: 26px;
+            bottom: 12px;
+            right: 12px;
+            }
+        }
+        @media (max-width: 900px) {
+            main section {
+                flex-direction: column;
+                gap: 16px;
+            }
+            article {
+                max-width: 100%;
+            }
+        }
+        @media (max-width: 600px) {
+            .container, main {
+                max-width: 98vw !important;
+                padding: 0 4px;
+            }
+            nav ul, nav div {
+                flex-direction: column !important;
+                align-items: flex-start !important;
+            }
+            nav ul li, nav div ul li {
+                margin: 4px 0 !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header style="background: rgb(255, 230, 0); padding: 20px 0;">
+        <div class="container" style="max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between;">
+            <a href="#" style="text-decoration: none;">
+                <img src="./mercado-libre.png" alt="Mercado Libre" style="height: 40px;">
+            </a>
+            <input type="text" placeholder="Buscar productos, marcas y más..." style="flex: 1; margin: 0 20px; width: 70%; padding: 8px; border: none; border-radius: 4px 0 0 4px;">
+            <img src="./arriba.png" alt="arriba derecha" style="height:50px;">
+        </div>
+        <nav style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px;">
+            <div style="display: flex; align-items: center;">
+                <img id="ubicacion" src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="ubicacion" style="height:30px; margin-right: 10px;">
+                <ul style="display: flex; list-style: none; margin: 0; padding: 0;">
+                    <li style="margin: 0 10px;">Categorías</li>
+                    <li style="margin: 0 10px;">Ofertas</li>
+                    <li style="margin: 0 10px;">Cupones</li>
+                    <li style="margin: 0 10px;">Supermercado</li>
+                    <li style="margin: 0 10px;">Moda</li>
+                    <li style="margin: 0 10px;">Vender</li>
+                    <li style="margin: 0 10px;">Ayuda / PQR</li>
+                </ul>
+            </div>
+            <ul style="display: flex; list-style: none; margin: 0; padding: 0; align-items: center;">
+                <li style="margin: 0 10px;">Crea tu cuenta</li>
+                <li><a href="#">Ingresa</a></li>
+                <li style="margin: 0 10px;">Mis Compras</li>
+                <li style="margin: 0 10px;">
+                    <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="carrito" style="height:30px;">
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main style="max-width: 1200px; margin: 40px auto;">
+        <h1 style="color: #333;">Bienvenido a Mercado Libre República Dominicana</h1>
+        <section style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 32px;">
+            <article style="flex: 1 1 250px; border: 1px solid #eee; border-radius: 8px; padding: 16px; background: #fff;">
+                <img src="./celular.png" alt="Celular" class="product-img">
+                <h2 style="font-size: 1.1em; margin: 12px 0 8px;">Celular Samsung Galaxy A32</h2>
+                <p style="color: #00a650; font-weight: bold; font-size: 1.2em;">RD$ 12,500</p>
+                <button class="buy-btn" style="background: #ffe600; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Comprar ahora</button>
+            </article>
+            <article style="flex: 1 1 250px; border: 1px solid #eee; border-radius: 8px; padding: 16px; background: #fff;">
+                <img src="./laptop.png" alt="Laptop" class="product-img">
+                <h2 style="font-size: 1.1em; margin: 12px 0 8px;">Laptop HP 14" 8GB RAM</h2>
+                <p style="color: #00a650; font-weight: bold; font-size: 1.2em;">RD$ 28,900</p>
+                <button class="buy-btn" style="background: #ffe600; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Comprar ahora</button>
+            </article>
+            <article style="flex: 1 1 250px; border: 1px solid #eee; border-radius: 8px; padding: 16px; background: #fff;">
+                <img src="./audifono.png" alt="Audífonos" class="product-img">
+                <h2 style="font-size: 1.1em; margin: 12px 0 8px;">Audífonos Bluetooth JBL</h2>
+                <p style="color: #00a650; font-weight: bold; font-size: 1.2em;">RD$ 2,300</p>
+                <button class="buy-btn" style="background: #ffe600; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Comprar ahora</button>
+            </article>
+        </section>
+    </main>
+    <footer style="background: #f5f5f5; padding: 24px 0; text-align: center; color: #666; margin-top: 40px;">
+        © 2024 Mercado Libre República Dominicana
+    </footer>
+    <script>
+        document.querySelectorAll('.buy-btn').forEach(btn => {
+            btn.addEventListener('click', function() {
+                alert('¡Gracias por tu interés! Pronto podrás comprar este producto.');
+            });
+        });
+    </script>
+</body>
+</html>
