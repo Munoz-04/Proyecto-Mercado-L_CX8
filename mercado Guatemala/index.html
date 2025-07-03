@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Mercado Libre Guatemala</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body { font-family: Arial, sans-serif; background: #f5f5f5; margin: 0; }
+        header { 
+            background: #ffe600; 
+            padding: 15px 0; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            padding: 10px 5%;
+        }
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo {
+            height: 40px;
+            margin-right: 15px;
+        }
+        header h1 { 
+            margin: 0; 
+            color: #333;
+            font-size: 1.8em;
+        }
+        .user-actions {
+            display: flex;
+            align-items: center;
+        }
+        .user-actions a {
+            margin-left: 15px;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        .user-actions i {
+            margin-right: 5px;
+        }
+        nav { 
+            background: #fff; 
+            padding: 15px 5%; 
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+        }
+        .search-container {
+            display: flex;
+            width: 60%;
+            margin-right: 20px;
+        }
+        nav input[type="text"] { 
+            width: 100%; 
+            padding: 10px; 
+            border: 1px solid #ccc; 
+            border-radius: 4px 0 0 4px;
+            border-right: none;
+            font-size: 1em;
+        }
+        nav button { 
+            padding: 10px 16px; 
+            background: #3483fa; 
+            color: #fff; 
+            border: none; 
+            border-radius: 0 4px 4px 0; 
+            cursor: pointer;
+        }
+        .categories {
+            display: flex;
+            margin-left: auto;
+        }
+        .categories a {
+            margin-left: 20px;
+            color: #333;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+        main { 
+            max-width: 1200px; 
+            margin: 30px auto; 
+            padding: 0 20px; 
+        }
+        .productos { 
+            display: grid; 
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+            gap: 24px; 
+        }
+        .producto { 
+            background: #fff; 
+            border-radius: 8px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05); 
+            padding: 16px; 
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .producto:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        .producto img { 
+            width: 100%; 
+            max-width: 180px; 
+            height: 180px; 
+            object-fit: contain; 
+            margin-bottom: 12px; 
+        }
+        .producto h2 { 
+            font-size: 1.1em; 
+            margin: 0 0 8px; 
+            height: 40px;
+            overflow: hidden;
+        }
+        .producto p { 
+            color: #3483fa; 
+            font-weight: bold; 
+            margin: 0 0 12px; 
+            font-size: 1.2em;
+        }
+        .producto button { 
+            background: #00a650; 
+            color: #fff; 
+            border: none; 
+            padding: 10px 20px; 
+            border-radius: 4px; 
+            cursor: pointer;
+            width: 100%;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        .producto button:hover {
+            background: #008a43;
+        }
+        .section-title {
+            color: #333;
+            border-bottom: 2px solid #ffe600;
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+        footer { 
+            background: #222; 
+            color: #fff; 
+            padding: 40px 5% 20px;
+            margin-top: 40px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-column h3 {
+            color: #fff;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-column a:hover {
+            color: #fff;
+        }
+        .social-icons {
+            display: flex;
+            gap: 15px;
+            margin-top: 15px;
+        }
+        .social-icons a {
+            color: #fff;
+            font-size: 1.5em;
+        }
+        .copyright {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #999;
+            font-size: 0.9em;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            .logo-container {
+                margin-bottom: 10px;
+            }
+            .user-actions {
+                margin-top: 10px;
+            }
+            nav {
+                flex-direction: column;
+            }
+            .search-container {
+                width: 100%;
+                margin-bottom: 15px;
+                margin-right: 0;
+            }
+            .categories {
+                margin-top: 15px;
+                margin-left: 0;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            .categories a {
+                margin: 0 10px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://http2.mlstatic.com/frontend-assets/ui-navigation/5.19.1/mercadolibre/logo__large_plus.png" alt="Mercado Libre Logo" class="logo">
+            <h1>Mercado Libre Guatemala</h1>
+        </div>
+        <div class="user-actions">
+            <a href="#"><i class="fas fa-user"></i> Mi cuenta</a>
+            <a href="#"><i class="fas fa-heart"></i> Favoritos</a>
+            <a href="#"><i class="fas fa-shopping-cart"></i> Carrito</a>
+        </div>
+    </header>
+    <nav>
+        <div class="search-container">
+            <input type="text" placeholder="Buscar productos, marcas y más...">
+            <button><i class="fas fa-search"></i> Buscar</button>
+        </div>
+        <div class="categories">
+            <a href="#">Categorías</a>
+            <a href="#">Ofertas</a>
+            <a href="#">Historial</a>
+            <a href="#">Supermercado</a>
+            <a href="#">Tiendas oficiales</a>
+        </div>
+    </nav>
+    <main>
+        <h2 class="section-title">Productos Destacados</h2>
+        <div class="productos">
+            <div class="producto">
+                <img src="./Celular.png" alt="Celular Samsung">
+                <h2>Celular Samsung Galaxy A14</h2>
+                <p>Q1,499.00</p>
+                <button><i class="fas fa-cart-plus"></i> Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="./Computador.png" alt="Laptop HP">
+                <h2>Laptop Lenovo 14" 8GB RAM</h2>
+                <p>Q3,999.00</p>
+                <button><i class="fas fa-cart-plus"></i> Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="./Audifonos.png" alt="Audífonos Bluetooth">
+                <h2>Audífonos Bluetooth</h2>
+                <p>Q199.00</p>
+                <button><i class="fas fa-cart-plus"></i> Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="./TV.png" alt="Smart TV 43 pulgadas">
+                <h2>Smart TV 43" Full HD</h2>
+                <p>Q2,299.00</p>
+                <button><i class="fas fa-cart-plus"></i> Comprar</button>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Información</h3>
+                <ul>
+                    <li><a href="#">Acerca de Mercado Libre</a></li>
+                    <li><a href="#">Trabaja con nosotros</a></li>
+                    <li><a href="#">Sustentabilidad</a></li>
+                    <li><a href="#">Términos y condiciones</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Ayuda</h3>
+                <ul>
+                    <li><a href="#">Comprar</a></li>
+                    <li><a href="#">Vender</a></li>
+                    <li><a href="#">Resolución de problemas</a></li>
+                    <li><a href="#">Centro de seguridad</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contacto</h3>
+                <ul>
+                    <li><i class="fas fa-phone"></i> (502) 1234-5678</li>
+                    <li><i class="fas fa-envelope"></i> contacto@mercadolibre.gt</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Ciudad de Guatemala</li>
+                </ul>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Métodos de pago</h3>
+                <ul>
+                    <li><i class="fas fa-credit-card"></i> Tarjetas de crédito</li>
+                    <li><i class="fas fa-money-bill-wave"></i> Efectivo</li>
+                    <li><i class="fas fa-university"></i> Transferencias bancarias</li>
+                    <li><i class="fab fa-cc-paypal"></i> PayPal</li>
+                </ul>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2024 Mercado Libre Guatemala. Todos los derechos reservados.
+        </div>
+    </footer>
+</body>
+</html>
