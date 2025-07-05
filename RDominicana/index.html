@@ -1,4 +1,32 @@
 <!DOCTYPE html>
+<style>
+    nav ul li,
+    nav div ul li,
+    nav ul li a,
+    nav ul li img,
+    nav div ul li a {
+        cursor: pointer;
+        user-select: none;
+        transition: color 0.15s;
+    }
+    nav ul li:hover,
+    nav div ul li:hover,
+    nav ul li a:hover,
+    nav div ul li a:hover {
+        color: #3483fa;
+        text-decoration: underline;
+    }
+</style>
+<script>
+    // Hace clickeables los elementos del nav
+    document.addEventListener('DOMContentLoaded', function() {
+        document.querySelectorAll('nav ul li, nav div ul li').forEach(function(li) {
+            li.addEventListener('click', function() {
+                alert('Has hecho clic en: ' + li.textContent.trim());
+            });
+        });
+    });
+</script>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -123,10 +151,10 @@
     <header style="background: rgb(255, 230, 0); padding: 20px 0;">
         <div class="container" style="max-width: 1200px; margin: auto; display: flex; align-items: center; justify-content: space-between;">
             <a href="#" style="text-decoration: none;">
-                <img src="./mercado-libre.png" alt="Mercado Libre" style="height: 40px;">
+                <img src="./img/mercado-libre.png" alt="Mercado Libre" style="height: 40px;">
             </a>
             <input type="text" placeholder="Buscar productos, marcas y más..." style="flex: 1; margin: 0 20px; width: 70%; padding: 8px; border: none; border-radius: 4px 0 0 4px;">
-            <img src="./arriba.png" alt="arriba derecha" style="height:50px;">
+            <img src="./img/arriba.png" alt="arriba derecha" style="height:50px;">
         </div>
         <nav style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px;">
             <div style="display: flex; align-items: center;">
@@ -155,19 +183,19 @@
         <h1 style="color: #333;">Bienvenido a Mercado Libre República Dominicana</h1>
         <section style="display: flex; flex-wrap: wrap; gap: 24px; margin-top: 32px;">
             <article style="flex: 1 1 250px; border: 1px solid #eee; border-radius: 8px; padding: 16px; background: #fff;">
-                <img src="./celular.png" alt="Celular" class="product-img">
+                <img src="./img/celular.png" alt="Celular" class="product-img">
                 <h2 style="font-size: 1.1em; margin: 12px 0 8px;">Celular Samsung Galaxy A32</h2>
                 <p style="color: #00a650; font-weight: bold; font-size: 1.2em;">RD$ 12,500</p>
                 <button class="buy-btn" style="background: #ffe600; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Comprar ahora</button>
             </article>
             <article style="flex: 1 1 250px; border: 1px solid #eee; border-radius: 8px; padding: 16px; background: #fff;">
-                <img src="./laptop.png" alt="Laptop" class="product-img">
+                <img src="./img/laptop.png" alt="Laptop" class="product-img">
                 <h2 style="font-size: 1.1em; margin: 12px 0 8px;">Laptop HP 14" 8GB RAM</h2>
                 <p style="color: #00a650; font-weight: bold; font-size: 1.2em;">RD$ 28,900</p>
                 <button class="buy-btn" style="background: #ffe600; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Comprar ahora</button>
             </article>
             <article style="flex: 1 1 250px; border: 1px solid #eee; border-radius: 8px; padding: 16px; background: #fff;">
-                <img src="./audifono.png" alt="Audífonos" class="product-img">
+                <img src="./img/audifono.png" alt="Audífonos" class="product-img">
                 <h2 style="font-size: 1.1em; margin: 12px 0 8px;">Audífonos Bluetooth JBL</h2>
                 <p style="color: #00a650; font-weight: bold; font-size: 1.2em;">RD$ 2,300</p>
                 <button class="buy-btn" style="background: #ffe600; border: none; padding: 8px 16px; border-radius: 4px; cursor: pointer;">Comprar ahora</button>
