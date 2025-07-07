@@ -1,0 +1,736 @@
+<<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Mercado Libre Venezuela - La plataforma de compras más grande del país">
+    <title>Teléfono Inteligente Xiaomi Redmi Note 11 | Mercado Libre Venezuela</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-yellow: #ffe600;
+            --primary-blue: #3483fa;
+            --primary-green: #00a650;
+            --dark-gray: #333;
+            --medium-gray: #666;
+            --light-gray: #ededed;
+            --white: #fff;
+            --shadow-sm: 0 1px 4px rgba(0,0,0,0.04);
+            --shadow-md: 0 4px 16px rgba(52,131,250,0.08);
+            --shadow-lg: 0 8px 24px rgba(0,0,0,0.12);
+            --border-radius-sm: 4px;
+            --border-radius-md: 8px;
+            --border-radius-lg: 12px;
+            --transition-fast: 0.15s;
+            --transition-normal: 0.3s;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: var(--dark-gray);
+            line-height: 1.5;
+        }
+
+        /* Header Styles */
+        .site-header {
+            background-color: var(--primary-yellow);
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .header-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .logo {
+            height: 40px;
+            width: auto;
+        }
+
+        /* Search Bar Styles */
+        .search-container {
+            flex-grow: 1;
+            max-width: 600px;
+            margin: 0 24px;
+            position: relative;
+        }
+
+        .search-form {
+            display: flex;
+            width: 100%;
+        }
+
+        .search-input {
+            flex-grow: 1;
+            padding: 12px 16px;
+            border: none;
+            border-radius: var(--border-radius-sm) 0 0 var(--border-radius-sm);
+            font-size: 16px;
+            outline: none;
+            box-shadow: var(--shadow-sm);
+        }
+
+        .search-button {
+            background-color: var(--white);
+            border: none;
+            border-radius: 0 var(--border-radius-sm) var(--border-radius-sm) 0;
+            padding: 0 16px;
+            cursor: pointer;
+            color: var(--medium-gray);
+            transition: background-color var(--transition-fast);
+        }
+
+        .search-button:hover {
+            background-color: var(--light-gray);
+        }
+
+        /* Navigation Styles */
+        .main-nav {
+            background-color: var(--white);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .nav-list {
+            display: flex;
+            list-style: none;
+            gap: 24px;
+            padding: 12px 0;
+        }
+
+        .nav-item {
+            position: relative;
+        }
+
+        .nav-link {
+            color: var(--dark-gray);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 0;
+            transition: color var(--transition-fast);
+        }
+
+        .nav-link:hover {
+            color: var(--primary-blue);
+        }
+
+        .nav-icon {
+            font-size: 18px;
+        }
+
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 16px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 14px;
+            color: var(--medium-gray);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Product Page Styles */
+        .main-container {
+            max-width: 1200px;
+            margin: 24px auto;
+            padding: 0 24px;
+        }
+
+        .product-container {
+            display: flex;
+            gap: 32px;
+            background-color: var(--white);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+
+        .product-gallery {
+            flex: 0 0 50%;
+            max-width: 600px;
+        }
+
+        .main-image {
+            width: 100%;
+            height: auto;
+            border-radius: var(--border-radius-md);
+            margin-bottom: 16px;
+            cursor: zoom-in;
+        }
+
+        .thumbnail-container {
+            display: flex;
+            gap: 8px;
+        }
+
+        .thumbnail {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--light-gray);
+            cursor: pointer;
+            transition: border-color var(--transition-fast);
+        }
+
+        .thumbnail:hover {
+            border-color: var(--primary-blue);
+        }
+
+        .product-details {
+            flex: 1;
+        }
+
+        .product-condition {
+            font-size: 14px;
+            color: var(--medium-gray);
+            margin-bottom: 8px;
+        }
+
+        .product-title {
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+
+        .product-price {
+            font-size: 36px;
+            font-weight: 500;
+            color: var(--dark-gray);
+            margin-bottom: 16px;
+        }
+
+        .installment-option {
+            color: var(--primary-green);
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+
+        .shipping-badge {
+            display: inline-block;
+            background-color: var(--primary-green);
+            color: var(--white);
+            padding: 4px 8px;
+            border-radius: var(--border-radius-sm);
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 24px;
+        }
+
+        .product-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .buy-button {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius-md);
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .buy-button:hover {
+            background-color: #2968c8;
+        }
+
+        .add-to-cart-button {
+            background-color: var(--primary-yellow);
+            color: var(--dark-gray);
+            border: none;
+            border-radius: var(--border-radius-md);
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .add-to-cart-button:hover {
+            background-color: #f2e200;
+        }
+
+        .product-description {
+            background-color: var(--white);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+
+        .description-title {
+            font-size: 24px;
+            margin-bottom: 24px;
+            font-weight: 500;
+        }
+
+        .description-content {
+            line-height: 1.6;
+        }
+
+        .description-content ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        .description-content li {
+            margin-bottom: 8px;
+        }
+
+        /* Footer Styles */
+        .site-footer {
+            background-color: var(--light-gray);
+            padding: 40px 0;
+            color: var(--medium-gray);
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 24px;
+            margin-bottom: 32px;
+        }
+
+        .footer-column-title {
+            font-weight: 500;
+            margin-bottom: 16px;
+            color: var(--dark-gray);
+        }
+
+        .footer-link-list {
+            list-style: none;
+        }
+
+        .footer-link-item {
+            margin-bottom: 8px;
+        }
+
+        .footer-link {
+            color: var(--medium-gray);
+            text-decoration: none;
+            font-size: 14px;
+            transition: color var(--transition-fast);
+        }
+
+        .footer-link:hover {
+            color: var(--primary-blue);
+        }
+
+        .copyright {
+            text-align: center;
+            font-size: 14px;
+            padding-top: 24px;
+            border-top: 1px solid #ccc;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .product-container {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .product-gallery {
+                flex: 1;
+                max-width: 100%;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 16px;
+                padding: 16px;
+            }
+
+            .search-container {
+                margin: 0;
+                width: 100%;
+            }
+
+            .nav-list {
+                overflow-x: auto;
+                padding: 12px 16px;
+                gap: 16px;
+                -webkit-overflow-scrolling: touch;
+            }
+
+            .product-container {
+                padding: 24px 16px;
+            }
+
+            .product-title {
+                font-size: 20px;
+            }
+
+            .product-price {
+                font-size: 28px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .main-container {
+                padding: 0 16px;
+            }
+
+            .product-actions {
+                flex-direction: column;
+            }
+
+            .buy-button, .add-to-cart-button {
+                width: 100%;
+            }
+
+            .product-description {
+                padding: 24px 16px;
+            }
+        }
+
+        /* Utility Classes */
+        .hidden {
+            display: none;
+        }
+
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-container">
+            <a href="/" aria-label="Mercado Libre Venezuela - Inicio">
+                <img src="./img/image.png" alt="Mercado Libre" class="logo">
+            </a>
+            
+            <div class="search-container">
+                <form class="search-form" role="search">
+                    <input 
+                        type="text" 
+                        class="search-input" 
+                        placeholder="Buscar productos, marcas y más..." 
+                        aria-label="Buscar productos"
+                    >
+                    <button type="submit" class="search-button" aria-label="Buscar">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+            </div>
+            
+            <nav aria-label="Menú de usuario">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-user nav-icon"></i>
+                            <span>Mi cuenta</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#" class="nav-link">
+                            <i class="fas fa-shopping-cart nav-icon"></i>
+                            <span>Carrito</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <nav class="main-nav">
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">
+                        <i class="fas fa-bars nav-icon"></i>
+                        <span>Categorías</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Ofertas</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Historial</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Supermercado</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Moda</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Vender</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Ayuda</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="breadcrumb">
+        <a href="/">Inicio</a> > 
+        <a href="/celulares-telefonos">Celulares y Teléfonos</a> > 
+        <a href="/celulares-smartphones">Celulares y Smartphones</a> > 
+        <span>Xiaomi Redmi Note 11</span>
+    </div>
+
+    <main class="main-container">
+        <div class="product-container">
+            <div class="product-gallery">
+                <img 
+                    src="./img/frontal.png" 
+                    alt="Teléfono Inteligente Xiaomi Redmi Note 11 - Vista frontal" 
+                    class="main-image"
+                >
+                <div class="thumbnail-container">
+                    <img 
+                        src="./img/xiaomi-redmi-note-11-thumb1.jpg" 
+                        alt="Vista frontal" 
+                        class="thumbnail"
+                    >
+                    <img 
+                        src="./img/xiaomi-redmi-note-11-thumb2.jpg" 
+                        alt="Vista trasera" 
+                        class="thumbnail"
+                    >
+                    <img 
+                        src="./img/xiaomi-redmi-note-11-thumb3.jpg" 
+                        alt="Vista lateral" 
+                        class="thumbnail"
+                    >
+                    <img 
+                        src="./img/xiaomi-redmi-note-11-thumb4.jpg" 
+                        alt="Pantalla encendida" 
+                        class="thumbnail"
+                    >
+                </div>
+            </div>
+
+            <div class="product-details">
+                <p class="product-condition">Nuevo | 234 vendidos</p>
+                <h1 class="product-title">Teléfono Inteligente Xiaomi Redmi Note 11 128GB 4GB RAM - Graphite Gray</h1>
+                <div class="product-price">$ 145,00</div>
+                <p class="installment-option">en 12x $ 12,08 sin interés</p>
+                <span class="shipping-badge">
+                    <i class="fas fa-truck"></i> Envío gratis
+                </span>
+
+                <div class="product-features">
+                    <h2 class="sr-only">Características principales</h2>
+                    <ul>
+                        <li><strong>Pantalla:</strong> AMOLED de 6.43" Full HD+</li>
+                        <li><strong>Procesador:</strong> Snapdragon 680</li>
+                        <li><strong>Memoria:</strong> 128GB + 4GB RAM</li>
+                        <li><strong>Cámara:</strong> Cuádruple 50MP + 8MP + 2MP + 2MP</li>
+                        <li><strong>Batería:</strong> 5000mAh con carga rápida de 33W</li>
+                        <li><strong>Sistema:</strong> Android 11 con MIUI 13</li>
+                    </ul>
+                </div>
+
+                <div class="product-actions">
+                    <button class="buy-button">
+                        <i class="fas fa-credit-card"></i> Comprar ahora
+                    </button>
+                    <button class="add-to-cart-button">
+                        <i class="fas fa-shopping-cart"></i> Agregar al carrito
+                    </button>
+                </div>
+
+                <div class="product-seller-info">
+                    <h3 class="sr-only">Información del vendedor</h3>
+                    <p>Vendido por <strong>TecnoShopVE</strong></p>
+                    <p>MercadoLíder Platinum | 98% de calificaciones positivas</p>
+                </div>
+
+                <div class="product-payment-methods">
+                    <h3 class="sr-only">Métodos de pago</h3>
+                    <p><i class="fas fa-lock"></i> Compra protegida con Mercado Pago</p>
+                    <p><i class="fas fa-credit-card"></i> Pagá en hasta 12 cuotas sin interés</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="product-description">
+            <h2 class="description-title">Descripción del producto</h2>
+            <div class="description-content">
+                <p>El <strong>Xiaomi Redmi Note 11</strong> es un smartphone de gama media-alta que combina un diseño elegante con un excelente rendimiento. Con su pantalla AMOLED de 6.43 pulgadas y resolución Full HD+, disfrutarás de colores vibrantes y negros profundos.</p>
+                
+                <h3>Características principales:</h3>
+                <ul>
+                    <li><strong>Pantalla AMOLED de 6.43"</strong> con tasa de refresco de 90Hz para una experiencia visual fluida</li>
+                    <li><strong>Procesador Qualcomm Snapdragon 680</strong> para un rendimiento potente y eficiente</li>
+                    <li><strong>4GB de RAM y 128GB de almacenamiento interno</strong> (expandible mediante tarjeta microSD)</li>
+                    <li><strong>Sistema de cámara cuádruple</strong>: Principal de 50MP + ultra gran angular de 8MP + macro de 2MP + sensor de profundidad de 2MP</li>
+                    <li><strong>Cámara frontal de 13MP</strong> para selfies y videollamadas de alta calidad</li>
+                    <li><strong>Batería de 5000mAh</strong> con carga rápida de 33W para todo el día de uso</li>
+                    <li><strong>Android 11 con MIUI 13</strong>, la última versión del sistema operativo de Xiaomi</li>
+                    <li><strong>Diseño delgado de 8.1mm</strong> y peso ligero de 179g</li>
+                    <li><strong>Conectividad 4G LTE</strong>, Wi-Fi 5, Bluetooth 5.0 y NFC</li>
+                    <li><strong>Sensor de huellas lateral</strong> y reconocimiento facial para mayor seguridad</li>
+                </ul>
+
+                <h3>Incluye en la caja:</h3>
+                <ul>
+                    <li>Xiaomi Redmi Note 11</li>
+                    <li>Cargador rápido de 33W</li>
+                    <li>Cable USB-C</li>
+                    <li>Funda protectora transparente</li>
+                    <li>Clip para extraer tarjeta SIM</li>
+                    <li>Manual de usuario y garantía</li>
+                </ul>
+
+                <p><strong>Garantía:</strong> 12 meses por defectos de fábrica. Soporte técnico disponible en todo el país.</p>
+                <p><strong>Envío:</strong> Gratis a todo Venezuela. Entrega en 3-5 días hábiles en Caracas y 5-7 días hábiles en el interior del país.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Información</h3>
+                    <ul class="footer-link-list">
+                        <li class="footer-link-item"><a href="#" class="footer-link">Acerca de Mercado Libre</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Trabaja con nosotros</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Sustentabilidad</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Comprar</h3>
+                    <ul class="footer-link-list">
+                        <li class="footer-link-item"><a href="#" class="footer-link">Cómo comprar</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Mercado Puntos</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Ofertas</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Vender</h3>
+                    <ul class="footer-link-list">
+                        <li class="footer-link-item"><a href="#" class="footer-link">Cómo vender</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Herramientas para vender</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Mercado Shops</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Ayuda</h3>
+                    <ul class="footer-link-list">
+                        <li class="footer-link-item"><a href="#" class="footer-link">Centro de ayuda</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Contáctanos</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Defensa del Consumidor</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 class="footer-column-title">Síguenos</h3>
+                    <ul class="footer-link-list">
+                        <li class="footer-link-item"><a href="#" class="footer-link">Facebook</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Twitter</a></li>
+                        <li class="footer-link-item"><a href="#" class="footer-link">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="copyright">
+                <p>© 2024 Mercado Libre Venezuela - Hecho para Venezuela</p>
+                <p>Av. Francisco de Miranda, Centro Lido, Torre D, Piso 9, Oficina 9-D, Caracas 1060, Distrito Capital, Venezuela</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Simple image gallery functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const mainImage = document.querySelector('.main-image');
+            const thumbnails = document.querySelectorAll('.thumbnail');
+            
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    mainImage.src = this.src.replace('-thumb', '');
+                });
+            });
+            
+            // Add to cart button functionality
+            const addToCartButton = document.querySelector('.add-to-cart-button');
+            if (addToCartButton) {
+                addToCartButton.addEventListener('click', function() {
+                    alert('Producto agregado al carrito');
+                });
+            }
+            
+            // Buy now button functionality
+            const buyButton = document.querySelector('.buy-button');
+            if (buyButton) {
+                buyButton.addEventListener('click', function() {
+                    alert('Redirigiendo al proceso de compra');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
