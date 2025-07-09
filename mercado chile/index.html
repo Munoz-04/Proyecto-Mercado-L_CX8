@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mercado Libre</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.5.2/mercadolibre/logo__large_plus.png" alt="mercado libre">
+            <input type="text" placeholder="Buscar productos, marcas y más...">
+            <img src="./img/arriba derecha.png" alt="arriba derecha" style="height:50px;">
+        </div>
+        <nav>
+            <img id="ubicacion" src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="ubicacion" style="height:30px;"> 
+            <span>Chile</span>
+            <ul>
+                <li>Categorías</li>
+                <li>Ofertas</li>
+                <li>Cupones</li>
+                <li>Supermercado</li>
+                <li>Moda</li>
+                <li>Vender</li>
+                <li>Ayuda / PQR</li>
+            </ul>
+            <ul>
+                <li>Crea tu cuenta</li>
+                <li>Ingresa</li>
+                <li>Mis Compras</li>
+                <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="carrito" style="height:30px;">
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <div class="slider" id="slider">
+            <img src="./img/CH slide 1.png" class="slide-img active" alt="slide 1">
+            <img src="./img/CH slide 2.png" class="slide-img" alt="slide 2">
+            <img src="./img/CH slide 3.png" class="slide-img" alt="slide 3">
+            <img src="./img/CH slide 4.png" class="slide-img" alt="slide 3">
+            <img src="./img/CH slide 5.png" class="slide-img" alt="slide 3">
+            <img src="./img/CH slide 6.png" class="slide-img" alt="slide 3">
+            <img src="./img/CH slide 7.png" class="slide-img" alt="slide 3">
+            <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
+            <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+        </div>
+        <section id="propa">
+          <div class="propa1"><img src="./img/oster.png" alt=""></div>
+          <div class="propa2"><img src="./img/nescafe.png" alt=""></div>
+        </section>
+        <div class="catalogos" id="catalogos">
+            <div class="producto">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSii9-GEn96BURXsW1Q_yP3S0g-4SaaKokHsQ&s" alt="Nintendo" class="producto-img">
+                <div class="nombre">xbox series s</div>
+                <div class="precio">$1,999,999.000</div>
+                <div class="descripcion">una version un poco mas economica del ultimo xbox</div>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://infotechonline.co/wp-content/uploads/2023/10/gsc_119629958_2052296_1.jpg" alt="Super Nintendo" class="producto-img">
+                <div class="nombre">Xbox series X</div>
+                <div class="precio">$2,895,000.00</div>
+                <div class="descripcion">Si tienes 3 millones, no esperes mas para comprarla ya mismo</div>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCO/73297242_1/w=1500,h=1500,fit=pad" alt="Nintendo 64" class="producto-img">
+                <div class="nombre">Nintendo Switch 2</div>
+                <div class="precio">$2,859,000.00</div>
+                <div class="descripcion">Recien salida y ya la tenemos, no esperes más</div>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$" alt="Game Cube" class="producto-img">
+                <div class="nombre">Playstation 5</div>
+                <div class="precio">$2,350,000.00</div>
+                <div class="descripcion">Excelente calidad y en caja</div>
+                <button>Comprar</button>
+            </div>
+            <div class="producto">
+                <img src="https://http2.mlstatic.com/D_NQ_926584-MLA71282395677_082023-OO.jpg" alt="Playstation" class="producto-img">
+                <div class="nombre">Playstation 4</div>
+                <div class="precio">$1,500,000.00</div>
+                <div class="descripcion">Un poco vieja pero de excelente calidad, para ti</div>
+                <button>Comprar</button>
+            </div>
+        </div>
+        <button id="agregarProducto" onclick="toggleSidebar()">Agregar menú</button>
+        <aside id="sidebar" style="display:none;">
+            <form id="formAgregarProducto">
+                <h3>Agregar producto</h3>
+                <input type="text" id="nombre" placeholder="Nombre" required>
+                <input type="text" id="precio" placeholder="Precio" required>
+                <input type="text" id="descripcion" placeholder="Descripción" required>
+                <input type="text" id="imagen" placeholder="URL de la imagen" required>
+                <button type="submit">Agregar</button>
+                <button type="button" id="cerrar">Cerrar</button>
+            </form>
+        </aside>
+        <section id="suscribirse" class="suscribirse-rect">
+          <div class="suscribirse-superior">
+            <h1>suscribirse a nivel 6</h1>
+            <h1>| $22.988/mes</h1>
+          </div>
+          <div class="suscribirse-inferior">
+            <h2 class="suscribirse-beneficios">consigue los mejores beneficios en mercado libre</h2>
+            <div class="beneficios-lista">
+              <div class="beneficio">
+                <img src="https://play-lh.googleusercontent.com/gXHdyj_9Dbyz3uJy1EnmLHMUpU33VeD0n6kObv6tzvBveWKDFZQt7yGrnM-L4FW-5P4=w256" alt="Disney+" class="logo-beneficio">
+                <span>Disney+ sin cargo</span>
+              </div>
+              <div class="beneficio">
+                <img src="https://cdn-1.webcatalog.io/catalog/starplus/starplus-icon-filled-256.png?v=1714775980305" alt="Star+" class="logo-beneficio">
+                <span>Star+ sin cargo</span>
+              </div>
+              <div class="beneficio">
+                <img src="https://http2.mlstatic.com/storage/developers-site-cms-admin/CDV_ML/280212363711-210518-mla-mlm-mco-mlc-mlu-mlb-como-publicar-en-mercado-libre-por-primera-vez-icono-02.png" alt="Envíos" class="logo-beneficio">
+                <span>Envíos gratis y rápidos desde $90.000<br>y 40% off en envíos de menos de $90.000</span>
+              </div>
+            </div>
+          </div>
+       
+        </section>
+        <br>
+        <section class="listados">
+            <img src="./img/juegos y libros.png" alt="" class="listado1">
+            <img src="./img/camaras y drones.png" alt="" class="listado2">
+            <img src="./img/lo mejor en herramientas.png" alt="" class="listado3">
+        </section>
+        <section class="propagandas">
+            <img src="./img/propaganda 1.png" alt="" class="propaganda1">
+            <img src="./img/propaganda 2.png" alt="" class="propaganda2">
+        </section>
+        
+  <section class="entretenimiento">
+    <h2>beneficios de entretenimiento</h2>
+    <div class="entreten">
+      <img src="./img/incluido con meli+.png" alt="" class="entreten1">
+      <img src="./img/max 15 off.png" alt="" class="entreten2">
+      <img src="./img/universal+.png" alt="" class="entreten3">
+    </div>
+  </section>
+    
+
+
+  </section>
+  
+</section>
+      </div>
+
+    </main>
+    <script src="main.js"></script>
+        
+</body>
+
+</html>
