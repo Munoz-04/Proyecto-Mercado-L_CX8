@@ -30,7 +30,7 @@ body {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    align-items: center;
+    align-items: flex-start; /* Cambiado de center a flex-end */
 }
 
 .pais-btn {
@@ -41,7 +41,7 @@ body {
     padding: 5px 10px;
     font-size: 16px;
     cursor: pointer;
-    transition: background 0.2s;
+    transition: all 0.2s ease-in;
     text-align: left;
 }
 
