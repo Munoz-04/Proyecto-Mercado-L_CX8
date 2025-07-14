@@ -1,10 +1,10 @@
-<!DOCTYPE html>
+<<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Mercado Libre Venezuela - La plataforma de compras más grande del país">
-    <title>Mercado Libre Venezuela - Envíos Gratis en el día</title>
+    <title>Teléfono Inteligente Xiaomi Redmi Note 11 | Mercado Libre Venezuela</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
@@ -144,203 +144,185 @@
             font-size: 18px;
         }
 
-        /* Main Content */
+        /* Breadcrumb */
+        .breadcrumb {
+            padding: 16px 0;
+            max-width: 1200px;
+            margin: 0 auto;
+            font-size: 14px;
+            color: var(--medium-gray);
+        }
+
+        .breadcrumb a {
+            color: var(--primary-blue);
+            text-decoration: none;
+        }
+
+        .breadcrumb a:hover {
+            text-decoration: underline;
+        }
+
+        /* Product Page Styles */
         .main-container {
             max-width: 1200px;
             margin: 24px auto;
             padding: 0 24px;
         }
 
-        .banner-container {
-            margin-bottom: 24px;
+        .product-container {
+            display: flex;
+            gap: 32px;
+            background-color: var(--white);
             border-radius: var(--border-radius-md);
-            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            padding: 32px;
+            margin-bottom: 32px;
         }
 
-        .banner {
+        .product-gallery {
+            flex: 0 0 50%;
+            max-width: 600px;
+        }
+
+        .main-image {
             width: 100%;
             height: auto;
-            display: block;
-        }
-
-        /* Categories Section */
-        .categories-section {
-            margin-bottom: 32px;
-        }
-
-        .section-title {
-            font-size: 24px;
+            border-radius: var(--border-radius-md);
             margin-bottom: 16px;
-            font-weight: 500;
+            cursor: zoom-in;
         }
 
-        .categories-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-            gap: 16px;
+        .thumbnail-container {
+            display: flex;
+            gap: 8px;
         }
 
-        .category-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius-md);
-            padding: 16px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            transition: transform var(--transition-fast);
+        .thumbnail {
+            width: 60px;
+            height: 60px;
+            border-radius: var(--border-radius-sm);
+            border: 1px solid var(--light-gray);
+            cursor: pointer;
+            transition: border-color var(--transition-fast);
         }
 
-        .category-card:hover {
-            transform: translateY(-4px);
+        .thumbnail:hover {
+            border-color: var(--primary-blue);
         }
 
-        .category-icon {
-            font-size: 32px;
-            color: var(--primary-blue);
-            margin-bottom: 8px;
+        .product-details {
+            flex: 1;
         }
 
-        .category-name {
+        .product-condition {
             font-size: 14px;
-            font-weight: 500;
-        }
-
-        /* Products Section */
-        .products-section {
-            margin-bottom: 32px;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
-            gap: 16px;
-        }
-
-        .product-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius-md);
-            overflow: hidden;
-            box-shadow: var(--shadow-sm);
-            transition: transform var(--transition-fast);
-            position: relative;
-        }
-
-        .product-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .product-image-container {
-            position: relative;
-            padding-top: 100%;
-            overflow: hidden;
-        }
-
-        .product-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 16px;
-        }
-
-        .product-info {
-            padding: 16px;
-            border-top: 1px solid var(--light-gray);
-        }
-
-        .product-price {
-            font-size: 22px;
-            font-weight: 500;
-            margin-bottom: 8px;
-            color: var(--dark-gray);
-        }
-
-        .product-installment {
-            font-size: 14px;
-            color: var(--primary-green);
+            color: var(--medium-gray);
             margin-bottom: 8px;
         }
 
         .product-title {
-            font-size: 14px;
-            margin-bottom: 8px;
-            display: -webkit-box;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-            height: 40px;
-        }
-
-        .product-shipping {
-            font-size: 14px;
-            color: var(--primary-green);
-            margin-bottom: 8px;
-        }
-
-        .product-location {
-            font-size: 12px;
-            color: var(--medium-gray);
-        }
-
-        .discount-badge {
-            position: absolute;
-            top: 8px;
-            right: 8px;
-            background-color: var(--primary-blue);
-            color: var(--white);
-            padding: 4px 8px;
-            border-radius: var(--border-radius-sm);
-            font-size: 12px;
+            font-size: 24px;
             font-weight: 500;
+            margin-bottom: 16px;
+            line-height: 1.3;
         }
 
-        .free-shipping-badge {
-            position: absolute;
-            top: 8px;
-            left: 8px;
+        .product-price {
+            font-size: 36px;
+            font-weight: 500;
+            color: var(--dark-gray);
+            margin-bottom: 16px;
+        }
+
+        .installment-option {
+            color: var(--primary-green);
+            font-size: 18px;
+            margin-bottom: 24px;
+        }
+
+        .shipping-badge {
+            display: inline-block;
             background-color: var(--primary-green);
             color: var(--white);
             padding: 4px 8px;
             border-radius: var(--border-radius-sm);
-            font-size: 12px;
+            font-size: 14px;
             font-weight: 500;
+            margin-bottom: 24px;
         }
 
-        /* Featured Brands Section */
-        .brands-section {
+        .product-actions {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            margin-top: 32px;
+        }
+
+        .buy-button {
+            background-color: var(--primary-blue);
+            color: var(--white);
+            border: none;
+            border-radius: var(--border-radius-md);
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .buy-button:hover {
+            background-color: #2968c8;
+        }
+
+        .add-to-cart-button {
+            background-color: var(--primary-yellow);
+            color: var(--dark-gray);
+            border: none;
+            border-radius: var(--border-radius-md);
+            padding: 16px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color var(--transition-fast);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .add-to-cart-button:hover {
+            background-color: #f2e200;
+        }
+
+        .product-description {
+            background-color: var(--white);
+            border-radius: var(--border-radius-md);
+            box-shadow: var(--shadow-sm);
+            padding: 32px;
             margin-bottom: 32px;
         }
 
-        .brands-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-            gap: 16px;
-        }
-
-        .brand-card {
-            background-color: var(--white);
-            border-radius: var(--border-radius-md);
-            padding: 16px;
-            text-align: center;
-            box-shadow: var(--shadow-sm);
-            transition: transform var(--transition-fast);
-        }
-
-        .brand-card:hover {
-            transform: translateY(-4px);
-        }
-
-        .brand-logo {
-            max-width: 100%;
-            max-height: 60px;
-            margin-bottom: 8px;
-        }
-
-        .brand-name {
-            font-size: 14px;
+        .description-title {
+            font-size: 24px;
+            margin-bottom: 24px;
             font-weight: 500;
+        }
+
+        .description-content {
+            line-height: 1.6;
+        }
+
+        .description-content ul {
+            margin: 16px 0;
+            padding-left: 24px;
+        }
+
+        .description-content li {
+            margin-bottom: 8px;
         }
 
         /* Footer Styles */
@@ -397,8 +379,14 @@
 
         /* Responsive Styles */
         @media (max-width: 1024px) {
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            .product-container {
+                flex-direction: column;
+                gap: 24px;
+            }
+
+            .product-gallery {
+                flex: 1;
+                max-width: 100%;
             }
         }
 
@@ -421,12 +409,16 @@
                 -webkit-overflow-scrolling: touch;
             }
 
-            .categories-grid {
-                grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            .product-container {
+                padding: 24px 16px;
             }
 
-            .brands-grid {
-                grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+            .product-title {
+                font-size: 20px;
+            }
+
+            .product-price {
+                font-size: 28px;
             }
         }
 
@@ -435,12 +427,16 @@
                 padding: 0 16px;
             }
 
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            .product-actions {
+                flex-direction: column;
             }
 
-            .product-price {
-                font-size: 18px;
+            .buy-button, .add-to-cart-button {
+                width: 100%;
+            }
+
+            .product-description {
+                padding: 24px 16px;
             }
         }
 
@@ -466,7 +462,7 @@
     <header class="site-header">
         <div class="header-container">
             <a href="/" aria-label="Mercado Libre Venezuela - Inicio">
-                <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/5.21.22/mercadolibre/logo__large_plus.png" alt="Mercado Libre" class="logo">
+                <img src="./img/image.png" alt="Mercado Libre" class="logo">
             </a>
             
             <div class="search-container">
@@ -533,274 +529,120 @@
         </div>
     </nav>
 
+    <div class="breadcrumb">
+        <a href="/">Inicio</a> > 
+        <a href="/celulares-telefonos">Celulares y Teléfonos</a> > 
+        <a href="/celulares-smartphones">Celulares y Smartphones</a> > 
+        <span>Xiaomi Redmi Note 11</span>
+    </div>
+
     <main class="main-container">
-        <!-- Banner Principal -->
-        <div class="banner-container">
-            <img src="https://http2.mlstatic.com/D_NQ_885957-MLA72832731850_112023-OO.webp" alt="Ofertas especiales" class="banner">
+        <div class="product-container">
+            <div class="product-gallery">
+                <img 
+                    src="./img/frontal.png" 
+                    alt="Teléfono Inteligente Xiaomi Redmi Note 11 - Vista frontal" 
+                    class="main-image"
+                >
+                <div class="thumbnail-container">
+                    <img 
+                        src="./img/xiaomi-redmi-note-11-thumb1.jpg" 
+                        alt="Vista frontal" 
+                        class="thumbnail"
+                    >
+                    <img 
+                        src="./img/xiaomi-redmi-note-11-thumb2.jpg" 
+                        alt="Vista trasera" 
+                        class="thumbnail"
+                    >
+                    <img 
+                        src="./img/xiaomi-redmi-note-11-thumb3.jpg" 
+                        alt="Vista lateral" 
+                        class="thumbnail"
+                    >
+                    <img 
+                        src="./img/xiaomi-redmi-note-11-thumb4.jpg" 
+                        alt="Pantalla encendida" 
+                        class="thumbnail"
+                    >
+                </div>
+            </div>
+
+            <div class="product-details">
+                <p class="product-condition">Nuevo | 234 vendidos</p>
+                <h1 class="product-title">Teléfono Inteligente Xiaomi Redmi Note 11 128GB 4GB RAM - Graphite Gray</h1>
+                <div class="product-price">$ 145,00</div>
+                <p class="installment-option">en 12x $ 12,08 sin interés</p>
+                <span class="shipping-badge">
+                    <i class="fas fa-truck"></i> Envío gratis
+                </span>
+
+                <div class="product-features">
+                    <h2 class="sr-only">Características principales</h2>
+                    <ul>
+                        <li><strong>Pantalla:</strong> AMOLED de 6.43" Full HD+</li>
+                        <li><strong>Procesador:</strong> Snapdragon 680</li>
+                        <li><strong>Memoria:</strong> 128GB + 4GB RAM</li>
+                        <li><strong>Cámara:</strong> Cuádruple 50MP + 8MP + 2MP + 2MP</li>
+                        <li><strong>Batería:</strong> 5000mAh con carga rápida de 33W</li>
+                        <li><strong>Sistema:</strong> Android 11 con MIUI 13</li>
+                    </ul>
+                </div>
+
+                <div class="product-actions">
+                    <button class="buy-button">
+                        <i class="fas fa-credit-card"></i> Comprar ahora
+                    </button>
+                    <button class="add-to-cart-button">
+                        <i class="fas fa-shopping-cart"></i> Agregar al carrito
+                    </button>
+                </div>
+
+                <div class="product-seller-info">
+                    <h3 class="sr-only">Información del vendedor</h3>
+                    <p>Vendido por <strong>TecnoShopVE</strong></p>
+                    <p>MercadoLíder Platinum | 98% de calificaciones positivas</p>
+                </div>
+
+                <div class="product-payment-methods">
+                    <h3 class="sr-only">Métodos de pago</h3>
+                    <p><i class="fas fa-lock"></i> Compra protegida con Mercado Pago</p>
+                    <p><i class="fas fa-credit-card"></i> Pagá en hasta 12 cuotas sin interés</p>
+                </div>
+            </div>
         </div>
 
-        <!-- Categorías -->
-        <section class="categories-section">
-            <h2 class="section-title">Categorías populares</h2>
-            <div class="categories-grid">
-                <a href="#" class="category-card">
-                    <i class="fas fa-mobile-alt category-icon"></i>
-                    <p class="category-name">Celulares</p>
-                </a>
-                <a href="#" class="category-card">
-                    <i class="fas fa-laptop category-icon"></i>
-                    <p class="category-name">Computación</p>
-                </a>
-                <a href="#" class="category-card">
-                    <i class="fas fa-tshirt category-icon"></i>
-                    <p class="category-name">Ropa</p>
-                </a>
-                <a href="#" class="category-card">
-                    <i class="fas fa-home category-icon"></i>
-                    <p class="category-name">Hogar</p>
-                </a>
-                <a href="#" class="category-card">
-                    <i class="fas fa-gamepad category-icon"></i>
-                    <p class="category-name">Videojuegos</p>
-                </a>
-                <a href="#" class="category-card">
-                    <i class="fas fa-utensils category-icon"></i>
-                    <p class="category-name">Supermercado</p>
-                </a>
-                <a href="#" class="category-card">
-                    <i class="fas fa-headphones category-icon"></i>
-                    <p class="category-name">Electrónica</p>
-                </a>
-                <a href="#" class="category-card">
-                    <i class="fas fa-car category-icon"></i>
-                    <p class="category-name">Autos</p>
-                </a>
-            </div>
-        </section>
+        <section class="product-description">
+            <h2 class="description-title">Descripción del producto</h2>
+            <div class="description-content">
+                <p>El <strong>Xiaomi Redmi Note 11</strong> es un smartphone de gama media-alta que combina un diseño elegante con un excelente rendimiento. Con su pantalla AMOLED de 6.43 pulgadas y resolución Full HD+, disfrutarás de colores vibrantes y negros profundos.</p>
+                
+                <h3>Características principales:</h3>
+                <ul>
+                    <li><strong>Pantalla AMOLED de 6.43"</strong> con tasa de refresco de 90Hz para una experiencia visual fluida</li>
+                    <li><strong>Procesador Qualcomm Snapdragon 680</strong> para un rendimiento potente y eficiente</li>
+                    <li><strong>4GB de RAM y 128GB de almacenamiento interno</strong> (expandible mediante tarjeta microSD)</li>
+                    <li><strong>Sistema de cámara cuádruple</strong>: Principal de 50MP + ultra gran angular de 8MP + macro de 2MP + sensor de profundidad de 2MP</li>
+                    <li><strong>Cámara frontal de 13MP</strong> para selfies y videollamadas de alta calidad</li>
+                    <li><strong>Batería de 5000mAh</strong> con carga rápida de 33W para todo el día de uso</li>
+                    <li><strong>Android 11 con MIUI 13</strong>, la última versión del sistema operativo de Xiaomi</li>
+                    <li><strong>Diseño delgado de 8.1mm</strong> y peso ligero de 179g</li>
+                    <li><strong>Conectividad 4G LTE</strong>, Wi-Fi 5, Bluetooth 5.0 y NFC</li>
+                    <li><strong>Sensor de huellas lateral</strong> y reconocimiento facial para mayor seguridad</li>
+                </ul>
 
-        <!-- Ofertas del día -->
-        <section class="products-section">
-            <h2 class="section-title">Ofertas del día</h2>
-            <div class="products-grid">
-                <!-- Producto 1 -->
-                <a href="#" class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_614385-MLV74106892860_012024-F.webp" alt="Xiaomi Redmi Note 12" class="product-image">
-                        <span class="discount-badge">15% OFF</span>
-                        <span class="free-shipping-badge">Envío gratis</span>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-price">$ 180,00</div>
-                        <div class="product-installment">en 12x $ 15,00 sin interés</div>
-                        <h3 class="product-title">Xiaomi Redmi Note 12 128GB 4GB RAM - Onyx Gray</h3>
-                        <div class="product-shipping">Envío gratis</div>
-                        <div class="product-location">Caracas</div>
-                    </div>
-                </a>
+                <h3>Incluye en la caja:</h3>
+                <ul>
+                    <li>Xiaomi Redmi Note 11</li>
+                    <li>Cargador rápido de 33W</li>
+                    <li>Cable USB-C</li>
+                    <li>Funda protectora transparente</li>
+                    <li>Clip para extraer tarjeta SIM</li>
+                    <li>Manual de usuario y garantía</li>
+                </ul>
 
-                <!-- Producto 2 -->
-                <a href="#" class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_965394-MLV54684648518_032023-F.webp" alt="Samsung Galaxy A14" class="product-image">
-                        <span class="free-shipping-badge">Envío gratis</span>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-price">$ 220,00</div>
-                        <div class="product-installment">en 12x $ 18,33 sin interés</div>
-                        <h3 class="product-title">Samsung Galaxy A14 128GB 4GB RAM - Negro</h3>
-                        <div class="product-shipping">Envío gratis</div>
-                        <div class="product-location">Valencia</div>
-                    </div>
-                </a>
-
-                <!-- Producto 3 -->
-                <a href="#" class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_702850-MLV74106892859_012024-F.webp" alt="Motorola Moto G32" class="product-image">
-                        <span class="discount-badge">10% OFF</span>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-price">$ 160,00</div>
-                        <div class="product-installment">en 12x $ 13,33 sin interés</div>
-                        <h3 class="product-title">Motorola Moto G32 128GB 4GB RAM - Plata</h3>
-                        <div class="product-shipping">Envío gratis</div>
-                        <div class="product-location">Maracaibo</div>
-                    </div>
-                </a>
-
-                <!-- Producto 4 -->
-                <a href="#" class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_814902-MLV74106892858_012024-F.webp" alt="iPhone 11" class="product-image">
-                        <span class="discount-badge">5% OFF</span>
-                        <span class="free-shipping-badge">Envío gratis</span>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-price">$ 380,00</div>
-                        <div class="product-installment">en 12x $ 31,67 sin interés</div>
-                        <h3 class="product-title">Apple iPhone 11 64GB - Negro</h3>
-                        <div class="product-shipping">Envío gratis</div>
-                        <div class="product-location">Caracas</div>
-                    </div>
-                </a>
-
-                <!-- Producto 5 -->
-                <a href="#" class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_867472-MLV74106892857_012024-F.webp" alt="Laptop HP" class="product-image">
-                        <span class="discount-badge">12% OFF</span>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-price">$ 450,00</div>
-                        <div class="product-installment">en 12x $ 37,50 sin interés</div>
-                        <h3 class="product-title">Laptop HP 15-dw2024la 15.6" Intel Core i5 8GB 256GB SSD</h3>
-                        <div class="product-shipping">Envío gratis</div>
-                        <div class="product-location">Barquisimeto</div>
-                    </div>
-                </a>
-
-                <!-- Producto 6 -->
-                <a href="#" class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_727117-MLV74106892856_012024-F.webp" alt="Smart TV LG" class="product-image">
-                        <span class="free-shipping-badge">Envío gratis</span>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-price">$ 520,00</div>
-                        <div class="product-installment">en 12x $ 43,33 sin interés</div>
-                        <h3 class="product-title">Smart TV LG 43" 43UQ7500 4K UHD WebOS</h3>
-                        <div class="product-shipping">Envío gratis</div>
-                        <div class="product-location">Valencia</div>
-                    </div>
-                </a>
-
-                <!-- Producto 7 -->
-                <a href="#" class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_934781-MLV74106892855_012024-F.webp" alt="AirPods Pro" class="product-image">
-                        <span class="discount-badge">8% OFF</span>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-price">$ 120,00</div>
-                        <div class="product-installment">en 12x $ 10,00 sin interés</div>
-                        <h3 class="product-title">Apple AirPods Pro (2da generación)</h3>
-                        <div class="product-shipping">Envío gratis</div>
-                        <div class="product-location">Caracas</div>
-                    </div>
-                </a>
-
-                <!-- Producto 8 -->
-                <a href="#" class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_883941-MLV74106892854_012024-F.webp" alt="Nintendo Switch" class="product-image">
-                        <span class="discount-badge">15% OFF</span>
-                        <span class="free-shipping-badge">Envío gratis</span>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-price">$ 320,00</div>
-                        <div class="product-installment">en 12x $ 26,67 sin interés</div>
-                        <h3 class="product-title">Nintendo Switch OLED 64GB - Blanco</h3>
-                        <div class="product-shipping">Envío gratis</div>
-                        <div class="product-location">Maracay</div>
-                    </div>
-                </a>
-            </div>
-        </section>
-
-        <!-- Marcas destacadas -->
-        <section class="brands-section">
-            <h2 class="section-title">Marcas destacadas</h2>
-            <div class="brands-grid">
-                <a href="#" class="brand-card">
-                    <img src="https://http2.mlstatic.com/D_NQ_786385-MLA51046659753_082022-OO.webp" alt="Samsung" class="brand-logo">
-                    <p class="brand-name">Samsung</p>
-                </a>
-                <a href="#" class="brand-card">
-                    <img src="https://http2.mlstatic.com/D_NQ_617758-MLA51046659758_082022-OO.webp" alt="Xiaomi" class="brand-logo">
-                    <p class="brand-name">Xiaomi</p>
-                </a>
-                <a href="#" class="brand-card">
-                    <img src="https://http2.mlstatic.com/D_NQ_654725-MLA51046659756_082022-OO.webp" alt="Motorola" class="brand-logo">
-                    <p class="brand-name">Motorola</p>
-                </a>
-                <a href="#" class="brand-card">
-                    <img src="https://http2.mlstatic.com/D_NQ_785982-MLA51046659755_082022-OO.webp" alt="Apple" class="brand-logo">
-                    <p class="brand-name">Apple</p>
-                </a>
-                <a href="#" class="brand-card">
-                    <img src="https://http2.mlstatic.com/D_NQ_847118-MLA51046659757_082022-OO.webp" alt="LG" class="brand-logo">
-                    <p class="brand-name">LG</p>
-                </a>
-                <a href="#" class="brand-card">
-                    <img src="https://http2.mlstatic.com/D_NQ_749192-MLA51046659754_082022-OO.webp" alt="Sony" class="brand-logo">
-                    <p class="brand-name">Sony</p>
-                </a>
-            </div>
-        </section>
-
-        <!-- Productos más vendidos -->
-        <section class="products-section">
-            <h2 class="section-title">Productos más vendidos</h2>
-            <div class="products-grid">
-                <!-- Producto 9 -->
-                <a href="#" class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_798640-MLV74106892853_012024-F.webp" alt="Reloj Inteligente" class="product-image">
-                        <span class="free-shipping-badge">Envío gratis</span>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-price">$ 65,00</div>
-                        <div class="product-installment">en 12x $ 5,42 sin interés</div>
-                        <h3 class="product-title">Reloj Inteligente Xiaomi Mi Band 7 - Negro</h3>
-                        <div class="product-shipping">Envío gratis</div>
-                        <div class="product-location">Caracas</div>
-                    </div>
-                </a>
-
-                <!-- Producto 10 -->
-                <a href="#" class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_957258-MLV74106892852_012024-F.webp" alt="Audífonos" class="product-image">
-                        <span class="discount-badge">10% OFF</span>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-price">$ 45,00</div>
-                        <div class="product-installment">en 12x $ 3,75 sin interés</div>
-                        <h3 class="product-title">Audífonos Inalámbricos Xiaomi Redmi Buds 3 Lite</h3>
-                        <div class="product-shipping">Envío gratis</div>
-                        <div class="product-location">Valencia</div>
-                    </div>
-                </a>
-
-                <!-- Producto 11 -->
-                <a href="#" class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_789117-MLV74106892851_012024-F.webp" alt="Tablet" class="product-image">
-                        <span class="free-shipping-badge">Envío gratis</span>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-price">$ 180,00</div>
-                        <div class="product-installment">en 12x $ 15,00 sin interés</div>
-                        <h3 class="product-title">Tablet Samsung Galaxy Tab A8 10.5" 32GB WiFi</h3>
-                        <div class="product-shipping">Envío gratis</div>
-                        <div class="product-location">Maracaibo</div>
-                    </div>
-                </a>
-
-                <!-- Producto 12 -->
-                <a href="#" class="product-card">
-                    <div class="product-image-container">
-                        <img src="https://http2.mlstatic.com/D_NQ_NP_2X_837899-MLV74106892850_012024-F.webp" alt="Cámara" class="product-image">
-                        <span class="discount-badge">7% OFF</span>
-                    </div>
-                    <div class="product-info">
-                        <div class="product-price">$ 250,00</div>
-                        <div class="product-installment">en 12x $ 20,83 sin interés</div>
-                        <h3 class="product-title">Cámara GoPro HERO11 Black - Adventure</h3>
-                        <div class="product-shipping">Envío gratis</div>
-                        <div class="product-location">Caracas</div>
-                    </div>
-                </a>
+                <p><strong>Garantía:</strong> 12 meses por defectos de fábrica. Soporte técnico disponible en todo el país.</p>
+                <p><strong>Envío:</strong> Gratis a todo Venezuela. Entrega en 3-5 días hábiles en Caracas y 5-7 días hábiles en el interior del país.</p>
             </div>
         </section>
     </main>
@@ -862,19 +704,32 @@
     </footer>
 
     <script>
-        // Simple functionality for product cards
+        // Simple image gallery functionality
         document.addEventListener('DOMContentLoaded', function() {
-            const productCards = document.querySelectorAll('.product-card');
+            const mainImage = document.querySelector('.main-image');
+            const thumbnails = document.querySelectorAll('.thumbnail');
             
-            productCards.forEach(card => {
-                card.addEventListener('click', function(e) {
-                    // Prevent default if it's not the actual link
-                    if (!e.target.closest('a')) {
-                        e.preventDefault();
-                        alert('Redirigiendo a la página del producto');
-                    }
+            thumbnails.forEach(thumbnail => {
+                thumbnail.addEventListener('click', function() {
+                    mainImage.src = this.src.replace('-thumb', '');
                 });
             });
+            
+            // Add to cart button functionality
+            const addToCartButton = document.querySelector('.add-to-cart-button');
+            if (addToCartButton) {
+                addToCartButton.addEventListener('click', function() {
+                    alert('Producto agregado al carrito');
+                });
+            }
+            
+            // Buy now button functionality
+            const buyButton = document.querySelector('.buy-button');
+            if (buyButton) {
+                buyButton.addEventListener('click', function() {
+                    alert('Redirigiendo al proceso de compra');
+                });
+            }
         });
     </script>
 </body>
