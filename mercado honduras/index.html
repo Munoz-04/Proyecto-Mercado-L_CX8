@@ -4,227 +4,196 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mercado Libre</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Mercado Libre Honduras - Envios gratis en el día</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/categories-style.css">
+    <link rel="stylesheet" href="./css/info-style.css">
 </head>
-
 <body>
-    <header>
-        <div class="container">
-            <img src="https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.5.2/mercadolibre/logo__large_plus.png" alt="mercado libre" class="logo">
-            <input type="text" placeholder="Buscar productos, marcas y más...">
-            <img src="" style="height:50px;">
+    <section class="cookies" id="cookies">
+        <div class="cookie-consent-banner">
+            <div class="cookie-consent-banner-out-container">
+                <div class="cookie-consent-banner-message-container">
+                    <p>Usamos cookies para mejorar tu experiencia en Mercado Libre. Consultar más en nuestro <a target="_blank" href="https://www.mercadolibre.com.hn/privacidad#tech-and-cookies">Centro de Privacidad.</a></p>
+                </div>
+                <div class="cookie-consent-banner-out-actions">
+                    <button class="cookie-consent-button" id="accept-cookies">Aceptar cookies</button>
+                    <button class="cookie-consent-button">Configurar cookies</button>
+                </div>
+            </div>
         </div>
-        <nav>
-            <ul>
-                <li class="bobo">Categorías</li>
-                <li>Historial</li>
-                <li>Vender gratis</li>
-                <li>Ayuda</li>
-            </ul>
-            <ul>
-                <li>Crea tu cuenta</li>
-                <li>Ingresa</li>
-                <li>Mis Compras</li>
-                <img src="https://cdn-icons-png.flaticon.com/512/107/107831.png" alt="carrito" style="height:30px;">
-            </ul>
-        </nav>
+    </section>
+    <header class="nav-header-container">
+        <div class="nav-bounds">  
+            <div class="nav-top-right-area">
+                <a class="nav-logo" href="">Mercado Libre Honduras - Donde comprar y vender de todo</a>
+            </div>
+            <div class="nav-top-center-area">
+                <input type="text" placeholder="Buscar productos, marcas y más..." maxlength="120">
+            </div>
+            <div class="nav-top-right-area"></div>
+
+            <div class="nav-bottom-left-area">
+                <div class="nav-menu-item">
+                    <a href="https://www.mercadolibre.com.hn/categorias#nav-header">Categorías</a>
+                </div>
+            </div>
+            <div class="nav-bottom-center-area">
+                <div class="nav-menu">
+                    <ul class="nav-menu-list">
+                        <li class="nav-menu-item">
+                            <a href="https://www.mercadolibre.com.hn/gz/home/navigation#nav-header">Historial</a>
+                        </li>
+                        <li class="nav-menu-item">
+                            <a href="https://www.mercadolibre.com.hn/syi/core/list#nav-header">Vende gratis</a>
+                        </li>
+                        <li class="nav-menu-item">
+                            <a href="https://www.mercadolibre.com.hn/ayuda#nav-header">Ayuda</a>
+                    </ul>
+                </div>
+            </div>
+            <div class="nav-bottom-right-area">
+                <nav class="nav-header-menu">
+                    <ul class="nav-header-menu-list">
+                        <li class="user-menu-guest-item">
+                            <a href="https://www.mercadolibre.com.hn/registration?confirmation_url=https%3A%2F%2Fwww.mercadolibre.com.hn%2F#nav-header">Crea tu cuenta</a>
+                        </li>
+                        <li class="user-menu-guest-item">
+                            <a href="https://www.mercadolibre.com/jms/mhn/lgz/login?platform_id=ML&go=https%3A%2F%2Fwww.mercadolibre.com.hn%2F&loginType=explicit#nav-header">Ingresa</a>
+                        </li>
+                        <li class="user-menu-guest-item">
+                            <a href="https://myaccount.mercadolibre.com.hn/purchases/list#nav-header">Mis compras</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
     </header>
-    <main>
+        <main>
         <div class="slider" id="slider">
-            <img src="./img/Captura de pantalla 2025-06-18 183211.png" class="slide-img active" alt="slide 1">
-            <img src="./img/Captura de pantalla 2025-06-17 a la(s) 5.21.00 p.m..png" class="slide-img" alt="slide 2">
-            <img src="./img/Captura de pantalla 2025-06-17 a la(s) 5.21.29 p.m..png" class="slide-img" alt="slide 3">
-            <button class="slider-btn prev" onclick="prevSlide()">&#10094;</button>
-            <button class="slider-btn next" onclick="nextSlide()">&#10095;</button>
+            <img src="https://http2.mlstatic.com/storage/homes-korriban/assets/images/exhibitors/fallbacks/es-desktop-redesign.jpg">
+            <div class="div-gradient"></div>
+            <button class="slider-btn prev"></button>
+            <button class="slider-btn next"></button>
+        </div>
+    </main>
+
+    <section class="cards-container">
+            <div class="card">
+                <h3>Ingresa a tu cuenta</h3>
+                <img src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/registration-da.svg" alt="Cuenta">
+                <p>Disfruta de ofertas y compra sin límites.</p>
+                <a href="#">Ingresar a tu cuenta</a>
+            </div>
+            <div class="card">
+                <h3>Zapatillas</h3>
+                <img src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/shoes-category.svg" alt="Zapatillas">
+                <p>Encuentra el estilo que se adapta a ti.</p>
+                <a href="#">Buscar Zapatillas</a>
+            </div>
+            <div class="card">
+                <h3>Celulares y teléfonos</h3>
+                <img src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/cellphones-category.svg" alt="Celulares">
+                <p>Descubre celulares que son tendencia.</p>
+                <a href="#">Ir a Celulares</a>
+            </div>
+            <div class="card">
+                <h3>Nuestras categorías</h3>
+                <img src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/categories.svg" alt="Categorías">
+                <p>Encuentra celulares, ropa, inmuebles y más.</p>
+                <a href="#">Ir a Categorías</a>
+            </div>
+            <div class="card">
+                <h3>Recibe tus compras</h3>
+                <img src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/buy-protected.svg" alt="Recibe compras">
+                <p>Puedes recibirlas en tu casa o retirarlas.</p>
+                <a href="#">Cómo recibir o retirar</a>
+            </div>
+            <div class="card">
+                <h3>Vende con nosotros</h3>
+                <img src="https://http2.mlstatic.com/frontend-assets/homes-palpatine/dynamic-access-desktop/sell-with-us.svg" alt="Vender">
+                <p>Publica tus productos o servicios gratis.</p>
+                <a href="#">Empezar a vender</a>
+            </div>
+        </section>
+
+        <div class="categories-container">
+        <div class="categories-header">
+            <h2 class="categories-title">Categorías</h2>
+            <a href="#" class="show-all-link">Mostrar todas las categorías</a>
+        </div>
+
+        <div class="categories-viewport">
+            <div class="categories-slider">
+                <div class="category-page">
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_car-front-new-category.webp" alt="Cars"><span>Autos, Motos y <br>Otros</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_mobile-button-category.webp" alt="Phones"><span>Celulares y <br>Teléfonos</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_oven-category.webp" alt="Appliances"><span>Hogar y <br>Electrodomésti...</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_controller-2-category.webp" alt="Gaming"><span>Consolas y <br>Videojuegos</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_steering-wheel-category.webp" alt="Vehicle Parts"><span>Accesorios para <br>Vehículos</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_tshirt-53-category.webp" alt="Apparel"><span>Indumentaria y <br>Accesorios</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_ball-soccer-category.webp" alt="Fitness"><span>Deportes y <br>Fitness</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_palette-category.webp" alt="Art"><span>Arte y <br>Antigüedades</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_oven-category.webp" alt="Appliances"><span>Hogar y <br>Electrodomésti...</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_tv-2-category.webp" alt="Computing"><span>Computación</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_building-category.webp" alt="Estate"><span>Inmuebles</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_audio-92-category.webp" alt="Electronics"><span>Electrónica, Audio <br>y Video</span></a>
+                </div>
+                <div class="category-page">
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_tractor-category.webp" alt="Agro"><span>Agro</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_watch-circle-category.webp" alt="Jewelry"><span>Joyas y Relojes</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_note-03-category.webp" alt="Music"><span>Música y Películas</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_microsoft-category.webp" alt="Others"><span>Otras categorías</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_camera-20-category.webp" alt="Cameras"><span>Cámaras Digitales <br>y Foto.</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_ball-soccer-category.webp" alt="Toys"><span>Juegos y <br>Juguetes</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_multiple-11-category.webp" alt="Services"><span>Servicios</span></a>
+                    <div href="" class="category-item-empty"></div>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_guitar-category.webp" alt="Instruments"><span>Instrumentos <br>Musicales</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_book-open-category.webp" alt="Books"><span>Libros, Revistas y <br>Comics</span></a>
+                    <a href="#" class="category-item"><img src="https://http2.mlstatic.com/storage/homes-korriban/assets/icons/xxhdpi/home_tvs-category.webp" alt="Tvs"><span>Televisores</span></a>
+                    <div href="" class="category-item-empty"></div>
+                </div>
+            </div>
         </div>
         
-        <section id="tiendas">
-          <div class="catalogo-tiendas">
-            <!-- Tarjeta Marca 1 -->
-            <div class="tarjeta-tienda">
-              <img src="https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/87e962aba18b6d37b64b32b2ddd0d68f" alt="Marca 1" class="logo-tienda">
-              <div class="nombre-tienda">Lego</div>
-              <div class="productos-tienda">
-                <img src="https://i5.walmartimages.com/asr/b22de35a-eac2-48d2-9b73-4f0a02c10bcd.430c2e5ae0b9fa8d261815442e9dac48.jpeg" alt="Producto 1-1" class="img-prod-tienda">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1j9h0gFKE0-RAjP3wsnCIaHfJC2xR16NgeA&s" alt="Producto 1-2" class="img-prod-tienda">
-                <img src="https://tiendalego.com.co/cdn/shop/products/42162.jpg?v=1687538847" alt="Producto 1-3" class="img-prod-tienda">
-              </div>
+        <button id="prev-btn" class="nav-button hidden">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+        </button>
+        <button id="next-btn" class="nav-button">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+        </button>
+    </div>
+
+    <section class="site-shopping-info">
+        <div class="info-container">
+            <div class="info-slide">
+                <div class="img-container">
+                    <img src="https://http2.mlstatic.com/storage/homes-korriban/assets/images/ecosystem/buy-heart.svg">
+                </div>
+                <h2>Compra sin moverte</h2>
+                <p>Encuentra lo que necesitas, y coordina el pago y la entrega con el vendedor. Es fácil y rápido. <br>¡Todos podemos hacerlo!</p>
+                <a href="https://www.mercadolibre.com.hn/ayuda/Compras_638">Cómo comprar en Mercado Libre</a>
             </div>
-            <!-- Tarjeta Marca 2 -->
-            <div class="tarjeta-tienda">
-              <img src="https://cdn.iconscout.com/icon/free/png-256/free-samsung-226432.png" alt="Marca 2" class="logo-tienda">
-              <div class="nombre-tienda">Samsung</div>
-              <div class="productos-tienda">
-                <img src="https://tienda.movistar.com.co/media/catalog/product/g/a/galaxys24u_titanium_black_1.jpg" alt="Producto 2-1" class="img-prod-tienda">
-                <img src="https://www.celudmovil.com.co/cdn/shop/files/s10_28.png?v=1728757438" alt="Producto 2-2" class="img-prod-tienda">
-                <img src="https://www.clevercel.co/cdn/shop/files/Portadas_SamsungA05.webp?v=1749238324" alt="Producto 2-3" class="img-prod-tienda">
-              </div>
+    
+            <div class="info-slide">
+                <div class="img-container">
+                    <img src="https://http2.mlstatic.com/storage/homes-korriban/assets/images/ecosystem/shipping.svg">
+                </div>
+                <h2>Recibe tu producto</h2>
+                <p>Acuerda la entrega de tu compra con el vendedor. Puedes recibirlo en tu casa, en la oficina o <br>retirarlo. ¡Tú decides qué prefieres!</p>
+                <a href="https://www.mercadolibre.com.hn/ayuda/Como-recibir-el-producto_924">Cómo coordino la entrega</a>
             </div>
-            <!-- Tarjeta Marca 3 -->
-            <div class="tarjeta-tienda">
-              <img src="https://d2q79iu7y748jz.cloudfront.net/s/_squarelogo/256x256/d79f978c7402e1bbfdf4e8d398839300" alt="Marca 3" class="logo-tienda">
-              <div class="nombre-tienda">Oster</div>
-              <div class="productos-tienda">
-                <img src="https://media.falabella.com/falabellaCO/12788171_01/w=800,h=800,fit=pad" alt="Producto 3-1" class="img-prod-tienda">
-                <img src="https://osterco.vtexassets.com/arquivos/ids/165114-800-auto?v=638793109929530000&width=800&height=auto&aspect=true" alt="Producto 3-2" class="img-prod-tienda">
-                <img src="https://osterco.vtexassets.com/arquivos/ids/166253/SAP_2204820_1.jpg?v=638610647547470000" alt="Producto 3-3" class="img-prod-tienda">
-              </div>
-            </div>
-            <!-- Tarjeta Marca 4 -->
-            <div class="tarjeta-tienda">
-              <img src="https://pbs.twimg.com/profile_images/1615373336728436739/GrqgnZr1_400x400.jpg" alt="Marca 4" class="logo-tienda">
-              <div class="nombre-tienda">Virtualllantas</div>
-              <div class="productos-tienda">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLD1eLkSMjOt3X3HZXMSN1KTIImuAmD36dbQ&s" alt="Producto 4-1" class="img-prod-tienda">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRmVZCC61uBLMNeUxD1BxRKQLElBhFmXCn_Vw&s" alt="Producto 4-2" class="img-prod-tienda">
-                <img src="https://www.virtualllantas.com/media/catalog/product/cache/1/image/383x/9df78eab33525d08d6e5fb8d27136e95/c/o/cooper_srmII_1_2_1.jpg" alt="Producto 4-3" class="img-prod-tienda">
-              </div>
-            </div>
-          </div>
-        </section>
-        <div class="catalogos" id="catalogos">
-            <div class="producto">
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSii9-GEn96BURXsW1Q_yP3S0g-4SaaKokHsQ&s" alt="Nintendo" class="producto-img">
-                <div class="nombre">xbox series s</div>
-                <div class="precio">$1,999,999.000</div>
-                <div class="descripcion">una version un poco mas economica del ultimo xbox</div>
-                <button>Comprar</button>
-            </div>
-            <div class="producto">
-                <img src="https://infotechonline.co/wp-content/uploads/2023/10/gsc_119629958_2052296_1.jpg" alt="Super Nintendo" class="producto-img">
-                <div class="nombre">Xbox series X</div>
-                <div class="precio">$2,895,000.00</div>
-                <div class="descripcion">Si tienes 3 millones, no esperes mas para comprarla ya mismo</div>
-                <button>Comprar</button>
-            </div>
-            <div class="producto">
-                <img src="https://imagedelivery.net/4fYuQyy-r8_rpBpcY7lH_A/falabellaCO/73297242_1/w=1500,h=1500,fit=pad" alt="Nintendo 64" class="producto-img">
-                <div class="nombre">Nintendo Switch 2</div>
-                <div class="precio">$2,859,000.00</div>
-                <div class="descripcion">Recien salida y ya la tenemos, no esperes más</div>
-                <button>Comprar</button>
-            </div>
-            <div class="producto">
-                <img src="https://gmedia.playstation.com/is/image/SIEPDC/ps5-product-thumbnail-01-en-14sep21?$facebook$" alt="Game Cube" class="producto-img">
-                <div class="nombre">Playstation 5</div>
-                <div class="precio">$2,350,000.00</div>
-                <div class="descripcion">Excelente calidad y en caja</div>
-                <button>Comprar</button>
-            </div>
-            <div class="producto">
-                <img src="https://http2.mlstatic.com/D_NQ_926584-MLA71282395677_082023-OO.jpg" alt="Playstation" class="producto-img">
-                <div class="nombre">Playstation 4</div>
-                <div class="precio">$1,500,000.00</div>
-                <div class="descripcion">Un poco vieja pero de excelente calidad, para ti</div>
-                <button>Comprar</button>
+    
+            <div class="info-slide">
+                <div class="img-container">
+                    <img src="https://http2.mlstatic.com/storage/homes-korriban/assets/images/ecosystem/free-sell.svg">
+                </div>
+                <h2>Vende gratis</h2>
+                <p>Miles de personas quieren lo que ofreces. Publica y verás qué pronto llegan las compras. ¡Tú no pagas nada!</p>
+                <a href="https://ayuda.mercadolibre.com.hn/ayuda/Vender-un-producto_988">Cómo vender en Mercado Libre</a>
             </div>
         </div>
-        <button id="agregarProducto" onclick="toggleSidebar()">Agregar menú</button>
-        <aside id="sidebar" style="display:none;">
-            <form id="formAgregarProducto">
-                <h3>Agregar producto</h3>
-                <input type="text" id="nombre" placeholder="Nombre" required>
-                <input type="text" id="precio" placeholder="Precio" required>
-                <input type="text" id="descripcion" placeholder="Descripción" required>
-                <input type="text" id="imagen" placeholder="URL de la imagen" required>
-                <button type="submit">Agregar</button>
-                <button type="button" id="cerrar">Cerrar</button>
-            </form>
-        </aside>
-        <section id="suscribirse" class="suscribirse-rect">
-          <div class="suscribirse-superior">
-            <h1>suscribirse a nivel 6</h1>
-            <h1>| $22.988/mes</h1>
-          </div>
-          <div class="suscribirse-inferior">
-            <h2 class="suscribirse-beneficios">consigue los mejores beneficios en mercado libre</h2>
-            <div class="beneficios-lista">
-              <div class="beneficio">
-                <img src="https://play-lh.googleusercontent.com/gXHdyj_9Dbyz3uJy1EnmLHMUpU33VeD0n6kObv6tzvBveWKDFZQt7yGrnM-L4FW-5P4=w256" alt="Disney+" class="logo-beneficio">
-                <span>Disney+ sin cargo</span>
-              </div>
-              <div class="beneficio">
-                <img src="https://cdn-1.webcatalog.io/catalog/starplus/starplus-icon-filled-256.png?v=1714775980305" alt="Star+" class="logo-beneficio">
-                <span>Star+ sin cargo</span>
-              </div>
-              <div class="beneficio">
-                <img src="https://http2.mlstatic.com/storage/developers-site-cms-admin/CDV_ML/280212363711-210518-mla-mlm-mco-mlc-mlu-mlb-como-publicar-en-mercado-libre-por-primera-vez-icono-02.png" alt="Envíos" class="logo-beneficio">
-                <span>Envíos gratis y rápidos desde $90.000<br>y 40% off en envíos de menos de $90.000</span>
-              </div>
-            </div>
-          </div>
-       
-        </section>
-        <br>
-        <h2>Beneficios de mercado puntos</h2>
-  <section class="beneficiarios">
-    
-    <div class="beneficiariosbof"> <img src="./img/Captura de pantalla 2025-06-18 a la(s) 5.35.17 p.m..png" alt=""></div>
-    <div class="beneficiariosbof"> <img src="./img/Captura de pantalla 2025-06-18 a la(s) 5.35.23 p.m..png" alt=""></div>
-    <div class="beneficiariosbof"> <img src="./img/Captura de pantalla 2025-06-18 a la(s) 5.35.29 p.m..png" alt=""></div>
-
-
-  </section>
-  
-</section>
-      </div>
-
-    </main>
-    <script>
-        function toggleSidebar() {
-            document.getElementById('sidebar').style.display = 'flex';
-        }
-        document.getElementById('cerrar').onclick = function() {
-            document.getElementById('sidebar').style.display = 'none';
-        };
-
-        document.getElementById('formAgregarProducto').onsubmit = function(e) {
-            e.preventDefault();
-            const nombre = document.getElementById('nombre').value;
-            const precio = document.getElementById('precio').value;
-            const descripcion = document.getElementById('descripcion').value;
-            const imagen = document.getElementById('imagen').value;
-
-            const div = document.createElement('div');
-            div.className = 'producto';
-            div.innerHTML = `
-                <img src="${imagen}" alt="${nombre}" class="producto-img">
-                <div class="nombre">${nombre}</div>
-                <div class="precio">${precio}</div>
-                <div class="descripcion">${descripcion}</div>
-                <button>Comprar</button>
-            `;
-            document.getElementById('catalogos').appendChild(div);
-            document.getElementById('sidebar').style.display = 'none';
-            this.reset();
-        };
-
-        // Slider
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide-img');
-
-        function showSlide(index) {
-            slides.forEach((slide, i) => {
-                slide.classList.remove('active');
-                if (i === index) {
-                    slide.classList.add('active');
-                }
-            });
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        function prevSlide() {
-            currentSlide = (currentSlide - 1 + slides.length) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        setInterval(nextSlide, 5000); 
-    </script>
+    </section>      
+<script src="./script.js"></script>
 </body>
-
 </html>

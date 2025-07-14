@@ -1,0 +1,186 @@
+@import url("https://use.typekit.net/eud4cwe.css");
+:root{
+    --bg-color: #ebebeb;
+    --text-color1: #333;
+    --primary-bg-color: #fff;
+    --primary-color: #3483fa;
+    --secondary-color: #1b54a8;
+    --text-color2: #666;
+    --mercado-libre: #fee600;
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--bg-color);
+    min-width: 920px;
+    font-size: 13px;
+    display: table;
+    font-family: "proxima-nova", sans-serif;
+    table-layout: fixed;
+    height: 100%;
+    width: 100%;
+}
+header {
+    background-color: var(--mercado-libre);
+    position: relative;
+}
+.nav-header-containerñ{
+    display: flex;
+    height: 100px;
+    justify-content: center;
+}
+.nav-bounds{
+    display: grid;
+    grid-template-areas: "nav-top-right-area nav-top-center-area nav-top-right-area" "nav-bottom-left-area nav-bottom-center-area nav-bottom-right-area";
+    grid-template-columns: 162px minmax(340px, 588px) minmax(350px, 390px);
+    grid-template-rows: 40px 28px;
+    grid-column-gap: 20px;
+    grid-row-gap: 12px;
+    padding: 8px 10px 12px 10px;
+    box-sizing: border-box;
+}
+.nav-logo {
+    width: 134px;
+    height: 34px;
+    background-image: url(https://http2.mlstatic.com/frontend-assets/ml-web-navigation/ui-navigation/6.6.137/mercadolibre/logo_large_plus@2x.webp);
+}
+.nav-bounds{
+    position: relative;
+    height: 100%;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.nav-top-left-area {
+    height: 40px;
+    align-items: center;
+    flex-direction: row;
+    display: flex;
+}
+.nav-logo{
+    color: inherit;
+    text-emphasis: none;
+    overflow: none;
+    text-indent: -999px;
+    height: 34px;
+    width: 134px;
+    display: flex;
+    position: static;
+    background-size: contain;
+}
+.nav-bounds ul{
+    display: flex;
+    list-style: none;
+    font-size: 13px;
+    gap: 20px;
+    margin-top: 9px;
+}
+.nav-bounds a{
+    color: #111;
+    text-decoration: none;
+    font-weight: 300;
+    font-size: 14px;
+}
+.nav-top-center-area {
+    padding: 10px 60px 10px 15px;
+    outline: none;
+    background-color: var(--primary-bg-color);
+    border-radius: 3px;
+    box-shadow: 0 1.7px 2px rgba(0,0,0,0.1);
+}
+.nav-top-center-area input {
+    width: 100%;
+    height: 100%;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: var(--text-color1);
+}
+.nav-bottom-right-area{
+    display: flex;
+}
+.nav-bottom-left-area{
+    height: 28px;
+    align-items: flex-end;
+    display: flex;
+}
+.nav-header-menu-list{
+    display: flex;
+    align-items: flex-end;
+    list-style: none;
+    padding: 0 0 0 40px;
+}
+/* Cards/Slider/Gradient*/
+
+.div-gradient {
+    width: 100%;
+    height: 120px;
+    z-index: 0;
+    transform: translateY(-7.75rem);
+    background: linear-gradient(180deg, #FEE600, #ededed);
+    position: relative;
+}
+.cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  padding: 40px 20px;
+  transform: translateY(-20.5rem);
+}
+.card {
+  background-color: white;
+  width: 183px;
+  height: 285px;
+  padding: 0px 18px 18px 18px;
+  border-radius: 7px;
+  text-align: center;
+  box-shadow: 0 0 5px rgba(0,0,0,0.085);
+  cursor: pointer;
+}
+.card p:hover {
+    color: #4c90fc;
+}
+.card img {
+    width: 105px;
+    height: 105px;
+    margin-bottom: 10px;
+}
+.card h3 {
+    font-size: 15px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    font-weight: 500;
+}
+.card h3:hover {
+    color: #333;
+}
+.card p {
+    font-size: 14px;
+    color: #333;
+    margin-bottom: 15px;
+}
+.card a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 151px;
+    height: 24px;
+    background-color: #e2eafc;
+    color: #4c90fc;
+    text-decoration: none;
+    font-size: 11px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-top: 35px;
+}
+.slider {
+  max-width: 100vw;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  height: auto;
+}
