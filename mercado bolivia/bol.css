@@ -198,3 +198,37 @@ header {
   color: #333;
 }
 
+footer { 
+            background: #222; 
+            color: #fff; 
+            padding: 40px 5% 20px;
+            margin-top: 40px;
+        }
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .footer-column h3 {
+            color: #fff;
+            font-size: 1.2em;
+            margin-bottom: 15px;
+        }
+        .footer-column ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .footer-column li {
+            margin-bottom: 10px;
+        }
+        .footer-column a {
+            color: #ccc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        .footer-column a:hover {
+            color: #fff;
+        }
